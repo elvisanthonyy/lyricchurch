@@ -501,8 +501,8 @@ footer div {
   }
   .leader {
     grid-template-columns: 100%;
-    grid-template-rows: auto 330px;
-    width: 300px;
+    grid-template-rows: auto auto;
+    width: 70%;
     height: -moz-fit-content;
     height: fit-content;
   }
