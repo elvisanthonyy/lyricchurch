@@ -507,6 +507,10 @@ footer div {
   .leader h2 {
     font-size: 1.3rem;
   }
+  .leader-image img {
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
   .leader p {
     font-size: 0.9rem;
   }
