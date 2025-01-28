@@ -55,23 +55,26 @@ body {
 
 #overlay {
   position: absolute;
-  top: -100px;
+  top: -140px;
   left: 0;
   background-color: black;
   opacity: 0.9;
   height: 110%;
   width: 100vw;
   z-index: 60;
+  opacity: 0;
   display: none;
+  transition: all 0.5s ease;
 }
 
 #overlay.active {
   display: block;
+  opacity: 1;
 }
 
 @keyframes navAn {
   from {
-    right: -1000px;
+    right: -1500px;
   }
   to {
     right: 0;
