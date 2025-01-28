@@ -469,13 +469,13 @@ footer div {
     margin-right: 3px;
   }
   .first {
-    height: 300px;
-    width: 300px;
+    height: auto;
+    width: 75%;
     margin-top: 5px;
   }
   .first img {
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
   }
   .ham {
     height: 4px;
