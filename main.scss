@@ -47,18 +47,18 @@
 
 body {
     font-family: "Open Sans", serif;
-    
+    position: relative;
 }
 
 #overlay {
     position: absolute;
-    top: 0;
+    top: -100px;
     left: 0;
     background-color: black;
     opacity: 0.9;
-    min-height: 670%;
+    height: 115%;
     width: 100vw;
-    z-index: 50;
+    z-index: 60;
     display: none;
     
 }
@@ -67,6 +67,14 @@ body {
     display: block;
 }
 
+@keyframes navAn {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 0;
+    }
+}
 nav {
     display: flex;
     justify-content: space-between;
@@ -80,7 +88,10 @@ nav {
     position: fixed;
     background-color: white;
     top: 0;
-    
+    z-index: 35;
+    animation-name: navAn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 nav p {
     font-size: 1.4rem;
@@ -105,19 +116,36 @@ nav p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
     padding-top: 100px;
     text-align: center;
-    right: 0;
     z-index: 100;
     position: fixed;
+    opacity: 0;
+    animation-name: burger;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
 }
 
+@keyframes burger {
+    from {
+        right: -100px;
+        opacity: 0.6;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
 .item-list:hover {
     opacity: 0.9;
     font-size: 1.2rem;
     color: green;
+
 }
 
 #items.active {
     display: grid;
+    opacity: 1;
+    animation-name: burger;
+    animation-duration: .5s;
 }
 
 
@@ -138,6 +166,9 @@ nav p {
     top: 35px;
     right: 15%;
     position: fixed;
+    animation-name: navAn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 .ham {
     display: block;
@@ -194,10 +225,20 @@ main {
 .menu:hover {
 
 }
+@keyframes loading {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 .first {
     height: 600px;
     width: 70%;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -205,7 +246,9 @@ main {
     align-items: center;
     margin: 40px;
     background-image: linear-gradient(170deg, yellow, green);
-    
+    animation-name: loading;
+    animation-duration: 1s;
+    z-index: 30;
 }
 
 .first img {
@@ -218,8 +261,9 @@ main {
 
 .service-time {
     @extend %card;
-    text-align: left;
+    text-align: center;
     padding-left: 100px;
+    
 }
 .Upcoming-events{
     @extend %card;
@@ -273,7 +317,8 @@ main {
 
 footer {
     width: 100%;
-    height: 250px;
+    min-height: 250px;
+    height: fit-content;
     background-color: black;
     display: flex;
     padding-left: 10%;
@@ -305,7 +350,10 @@ footer div {
 .leader {
     @extend %card;
     @extend %leaders-div;
-  
+}
+
+.leader p {
+
 }
 .leader-image {
     @extend %image-cover;
@@ -325,6 +373,8 @@ footer div {
 .about-us {
     color: white;
 }
+
+
 
 @media screen and (max-width:950px) {
     .logo p {
@@ -351,7 +401,12 @@ footer div {
 @media screen and (max-width:500px) {
    nav {
         padding: 0 10% 0 10%;
-    
+        margin-bottom: 30px;
+   }
+   main {
+     
+       margin-top: 70px;
+
    }
     .logo p {
         font-size: 1.05rem;
@@ -394,10 +449,10 @@ footer div {
         width: 20px;
     }
     .service-time {
-        font-size: 0.9rem
+        font-size: 0.8rem
     }
     .Upcoming-events {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     
     }
 
