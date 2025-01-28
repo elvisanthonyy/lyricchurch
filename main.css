@@ -503,6 +503,7 @@ footer div {
     grid-template-columns: 100%;
     grid-template-rows: auto 450px;
     height: 600px;
+    width: 75%;
   }
   .leader h2 {
     font-size: 1.3rem;
