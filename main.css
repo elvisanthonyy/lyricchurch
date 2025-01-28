@@ -432,8 +432,8 @@ footer div {
 }
 @media screen and (max-width: 500px) {
   nav {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 0;
     padding-top: 0;
     height: 80px;
@@ -446,7 +446,7 @@ footer div {
     top: 30px;
   }
   .menu {
-    right: 5%;
+    right: 10%;
   }
   main {
     margin-top: 70px;
