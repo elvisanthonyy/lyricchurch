@@ -3,7 +3,7 @@ const items = document.getElementById('items')
 const cancel = document.querySelector('.menu')
 const tap = document.querySelector('#main')
 const overlay = document.getElementById('overlay')
-
+const listItem =  document.querySelector('.item-list')
 
 ham.addEventListener('click', () => {
     items.classList.toggle('active')
@@ -17,4 +17,11 @@ overlay.addEventListener('click', ()=> {
     cancel.classList.remove('close')
     overlay.classList.remove('active')
 })
+
+
+function item () {
+    items.classList.remove('active')
+    cancel.classList.remove('close')
+    overlay.classList.remove('active')
+}
 

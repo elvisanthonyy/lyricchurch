@@ -12,6 +12,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
+   
 }
 %image {
     width: 100%;
@@ -56,7 +57,7 @@ body {
     left: 0;
     background-color: black;
     opacity: 0.9;
-    height: 115%;
+    height: 110%;
     width: 100vw;
     z-index: 60;
     display: none;
@@ -69,7 +70,7 @@ body {
 
 @keyframes navAn {
     from {
-        right: -100px;
+        right: -1000px;
     }
     to {
         right: 0;
@@ -134,9 +135,13 @@ nav p {
         opacity: 1;
     }
 }
+
+.item-list {
+    transition: all 0.5s ease;
+}
 .item-list:hover {
     opacity: 0.9;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: green;
 
 }
@@ -228,10 +233,12 @@ main {
 @keyframes loading {
     from {
         opacity: 0;
+        left: -100px;
     }
 
     to {
         opacity: 1;
+        left: 0;
     }
 }
 
@@ -247,7 +254,8 @@ main {
     margin: 40px;
     background-image: linear-gradient(170deg, yellow, green);
     animation-name: loading;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
     z-index: 30;
 }
 
@@ -260,22 +268,34 @@ main {
 }
 
 .service-time {
+    position: relative;
     @extend %card;
-    text-align: center;
-    padding-left: 100px;
+    text-align: left;
+    animation-name: cardanimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
     
 }
 .Upcoming-events{
+    position: relative;
     @extend %card;
+    animation-name: cardanimationright;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 
 .Upcoming-events li {
     font-size: 1.2rem;
+    
 }   
 
 .telegram-link {
+    position: relative;
     @extend %card;
     text-align: center;
+    animation-name: cardanimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 
 .logo {
@@ -285,7 +305,8 @@ main {
     align-items: center;
 }
 .image img {
-    width: 40px;
+    width: 30px;
+    
 }
 
 .image {
@@ -306,7 +327,7 @@ main {
 
 
 .container {
-    background-color: red;
+   
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -347,9 +368,38 @@ footer div {
     flex-direction: column;
 }
 
+@keyframes cardanimation {
+    from {
+        opacity: 0;
+        left: -100px;
+    }
+
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes cardanimationright {
+    from {
+        opacity: 0;
+        right: -100px;
+    }
+
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
 .leader {
+    position: relative;
     @extend %card;
     @extend %leaders-div;
+    animation-name: cardanimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    
 }
 
 .leader p {
@@ -357,6 +407,7 @@ footer div {
 }
 .leader-image {
     @extend %image-cover;
+    background-color: rgb(245, 245, 245);
 }
 .leader-image img {
     @extend %image;
@@ -426,12 +477,9 @@ footer div {
         width: 50%;
     }
 
-    .logo-image img {
+    .image img {
         width: 20px;
-        height: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
+        margin-right: 3px;
     }
 
     .first {
@@ -483,8 +531,15 @@ footer div {
        
     }
 
+    .leader p {
+        font-size: 0.9rem;
+    }
+
     .items a {
         font-size: 0.8rem;
     }
-    
+    footer {
+        font-size: 0.7rem;
+        padding-top: 30px;
+    }
 }
