@@ -69,6 +69,49 @@ body {
     opacity: 0.8;
 }
 
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.Jesus {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: black;
+}
+
+.Jesus:hover .Jesus-cont {
+    animation-play-state: paused;
+}
+
+
+.Jesus-cont {
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
+    animation: 15s slide infinite linear;
+}
+
+
+.Jesus-cont p {
+    margin: 0 100px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    
+}
+
 @keyframes navAn {
     from {
         right: -1500px;
@@ -317,7 +360,8 @@ main {
     height: 50px;
     width: 50px;
     margin-right: 5px;
-    padding-left: 15px;
+    padding-left: 13px;
+    padding-top: 12px;
 }
 
 .logo-image {
@@ -345,7 +389,7 @@ footer {
     display: flex;
     padding-left: 10%;
     padding-right: 10%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: baseline;
     padding-top: 50px;
     margin-top: 150px;
@@ -365,7 +409,7 @@ footer div {
 
 .about-us {
     display: flex;
-    width: 410px;
+    width: fit-content;
     flex-direction: column;
 }
 
@@ -438,20 +482,27 @@ footer div {
     height: 60px;
   }
     .first img {
-        height: 450px;
-        width: 450px;
+        height: auto;
+        width: 100%;
     }
     .first {
         height: fit-content;
-        width: fit-content;
+        width: 70%;
     }
     .items {
         width: 50%;
     }
+
+    .leader {
+        height: fit-content;
+    }
 }
 
-@media screen and (max-width:500px) {
-   nav {
+@media screen and (max-width:700px) {
+   .Jesus {
+        width: 80%;
+   }
+    nav {
         padding-left: 10%;
         padding-right: 10%;
         padding-bottom: 0;
@@ -476,7 +527,8 @@ footer div {
     .logo p {
         font-size: 1.05rem;
     }
-
+    
+    
     .image {
         width: 40px;
         height: 40px;
@@ -494,17 +546,18 @@ footer div {
     .image img {
         width: 20px;
         margin-right: 3px;
+        
     }
 
     .first {
-        height: 300px;
-        width: 300px;
+        height: auto;
+        width: 80%;
         margin-top: 5px;
     }
 
     .first img {
-        height: 300px;
-        width: 300px;
+        height: 100%;
+        width: 100%;
     }
 
     .ham {
@@ -537,13 +590,20 @@ footer div {
 
     .leader {
         grid-template-columns: 100%;
-        grid-template-rows: auto 450px;
-        height: 600px;
+        grid-template-rows: auto auto;
+        width: 70%;
+        height: fit-content;
+        padding-bottom: 0;
     }
 
     .leader h2 {
         font-size: 1.3rem;
        
+    }
+
+    .leader-image img {
+        object-fit: fill;
+
     }
 
     .leader p {
@@ -563,4 +623,11 @@ footer div {
         border-bottom: 2.5px solid black;
         border-top: 2.5px solid black;
     }
+        .Jesus-cont p {
+            margin: 0 80px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+    
+        }
 }
