@@ -574,13 +574,16 @@ footer div {
     padding-top: 30px;
   }
   .logo p {
-    border-bottom: 2.5px solid black;
-    border-top: 2.5px solid black;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
   }
   .Jesus-cont p {
-    margin: 0 80px;
-    font-size: 1rem;
+    margin: 0 70px;
+    font-size: 0.8rem;
     font-weight: bold;
     color: white;
+  }
+  .Jesus {
+    height: 30px;
   }
 }/*# sourceMappingURL=main.css.map */
