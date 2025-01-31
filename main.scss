@@ -464,8 +464,9 @@ main {
     @extend %btn;
     background-color: white;
     border: 1px solid black;
-    margin: 0 10px;
+    margin: 10px 10px;
     padding: 7px 0px;
+    
 }
 
 #whatsapp img {
@@ -488,6 +489,8 @@ main {
     background-color: white;
     border: 1px solid black;
     padding: 7px 0px;
+    margin: 10px 10px;
+    
 }
 
 #facebook:hover {
