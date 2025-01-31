@@ -1,3 +1,4 @@
+//variables
 %card {
     display: flex;
     flex-direction: column;
@@ -11,7 +12,7 @@
     padding: 50px;
     font-size: 1.2rem;
     font-weight: 600;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
+    @extend %shadow;
    
 }
 %image {
@@ -40,17 +41,37 @@
     font-size: auto;
     border-radius: 0;
 }
+
+%btn {
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: black;
+    min-width: 80px;
+    width: fit-content;
+}
+
+%shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
+}
+
+$color-gig: red;
+
+//body
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+
+
 body {
     font-family: "Open Sans", serif;
     position: relative;
 }
 
+//overlay
 #overlay {
     position: absolute;
     top: -140px;
@@ -69,6 +90,8 @@ body {
     opacity: 0.8;
 }
 
+
+//animations
 @keyframes slide {
     from {
         transform: translateX(0);
@@ -77,6 +100,306 @@ body {
         transform: translateX(-100%);
     }
 }
+
+@keyframes navAn {
+    from {
+        right: -1500px;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes burger {
+    from {
+        right: -100px;
+        opacity: 0.6;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    from {
+        opacity: 0;
+        left: -100px;
+    }
+
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes cardanimation {
+    from {
+        opacity: 0;
+        left: -100px;
+    }
+
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes cardanimationright {
+    from {
+        opacity: 0;
+        right: -100px;
+    }
+
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+
+
+//Nav
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 70px;
+    padding-left: 15%;
+    padding-right: 15%;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    z-index: 35;
+    animation-name: navAn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+nav p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.items {
+    top: 0;
+    right: 0;
+    display: none;
+    grid-template-rows: 70px 70px 70px 70px;
+    width: 400px;
+    justify-content: space-evenly;
+    font-size: 16px;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 30%;
+    background-color: white;
+    justify-content: center;
+    @extend %shadow;
+    padding-top: 100px;
+    text-align: center;
+    z-index: 100;
+    position: fixed;
+    opacity: 0;
+    animation-name: burger;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+}
+
+
+
+.item-list {
+    transition: all 0.5s ease;
+}
+
+.item-list:hover {
+    opacity: 0.9;
+    font-size: 1.1rem;
+    color: green;
+
+}
+
+#items.active {
+    display: grid;
+    opacity: 1;
+    animation-name: burger;
+    animation-duration: .5s;
+}
+
+
+
+.items a {
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.menu {
+    display: block;
+    z-index: 105;
+    width: fit-content;
+    cursor: pointer;
+    height: fit-content;
+    position: absolute;
+    top: 35px;
+    right: 15%;
+    position: fixed;
+    animation-name: navAn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+.ham {
+    display: block;
+    height: 5px;
+    width: 27px;
+    background-color: black;
+    margin: 3px;
+    border-radius: 5px;
+
+}
+
+.nav-cont {
+    z-index: 40;
+}
+
+.menu.close .ham:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu.close .ham:nth-child(2) {
+    opacity: 0;
+}
+
+.menu.close .ham:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.nav-items {
+    display: flex;
+    width: fit-content;
+    padding: 0;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 150px;
+    align-items: center;
+    margin-right: 30px;
+}
+
+//Body
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    cursor: pointer;
+}
+
+.menu:hover {}
+
+
+.first {
+    height: 600px;
+    width: 70%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 40px;
+    background-image: linear-gradient(170deg, yellow, green);
+    animation-name: loading;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    z-index: 30;
+}
+
+.first img {
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.service-time {
+    position: relative;
+    @extend %card;
+    text-align: left;
+    animation-name: cardanimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+
+}
+
+.Upcoming-events {
+    position: relative;
+    @extend %card;
+    animation-name: cardanimationright;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+.Upcoming-events li {
+    font-size: 1.2rem;
+
+}
+
+
+.logo {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 30px;
+
+}
+
+.image {
+    border: 3px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+    padding-left: 13px;
+    padding-top: 12px;
+}
+
+.logo-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+//slide
 .Jesus {
     position: relative;
     display: flex;
@@ -112,156 +435,15 @@ body {
     
 }
 
-@keyframes navAn {
-    from {
-        right: -1500px;
-    }
-    to {
-        right: 0;
-    }
-}
-nav {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    margin-bottom: 70px;
-    padding-left: 15%;
-    padding-right: 15%;
-    position: fixed;
-    background-color: white;
-    top: 0;
-    z-index: 35;
-    animation-name: navAn;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
-}
-nav p {
-    font-size: 1.4rem;
-    font-weight: bold;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-}
-.items {
-    top: 0;
-    right: 0;
-    display: none;
-    grid-template-rows: 70px 70px 70px 70px;
-    width: 400px;
-    justify-content: space-evenly;
-    font-size: 16px;
-    align-items: center;
-    position: absolute;
-    height: 100vh;
-    width: 30%;
-    background-color: white;
-    justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
-    padding-top: 100px;
-    text-align: center;
-    z-index: 100;
-    position: fixed;
-    opacity: 0;
-    animation-name: burger;
-    animation-duration: .5s;
-    animation-timing-function: ease-out;
-}
-
-@keyframes burger {
-    from {
-        right: -100px;
-        opacity: 0.6;
-    }
-    to {
-        right: 0;
-        opacity: 1;
-    }
-}
-
-.item-list {
-    transition: all 0.5s ease;
-}
-.item-list:hover {
-    opacity: 0.9;
-    font-size: 1.1rem;
-    color: green;
-
-}
-
-#items.active {
-    display: grid;
-    opacity: 1;
-    animation-name: burger;
-    animation-duration: .5s;
-}
-
-
-
-.items a {
-    text-decoration: none;
-    color: black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-.menu {
-    display: block;
-    z-index: 105;
-    width: fit-content;
-    cursor: pointer;
-    height: fit-content;
-    position: absolute;
-    top: 35px;
-    right: 15%;
-    position: fixed;
-    animation-name: navAn;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
-}
-.ham {
-    display: block;
-    height: 6px;
-    width: 30px;
-    background-color: black;
-    margin: 3px;
-    border-radius: 5px;
-    
-}
-.nav-cont {
-    z-index: 40;
-}
-
-          .menu.close .ham:nth-child(1) {
-              transform: rotate(45deg) translate(5px, 5px);
-          }
-    
-          .menu.close .ham:nth-child(2) {
-              opacity: 0;
-          }
-    
-          .menu.close .ham:nth-child(3) {
-              transform: rotate(-45deg) translate(7px, -6px);
-          }
-
-.nav-items {
+.about-us {
     display: flex;
     width: fit-content;
-    padding: 0;
+    flex-direction: column;
 }
 
-.socials {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 150px;
-    align-items: center;
-    margin-right: 30px;
-}
 
-.social-images {
 
-}
+//socials 
 .socials img {
     width: 20px;
     height: 20px;
@@ -273,75 +455,55 @@ nav p {
     height: 20px;
     object-fit: contain;
 }
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 120px;
-    cursor: pointer;
+#tele-btn {
+    @extend %btn;
+    margin: 0 10px;
 }
 
-.menu:hover {
-
-}
-@keyframes loading {
-    from {
-        opacity: 0;
-        left: -100px;
-    }
-
-    to {
-        opacity: 1;
-        left: 0;
-    }
+#whatsapp {
+    @extend %btn;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 10px;
+    padding: 7px 0px;
 }
 
-.first {
-    height: 600px;
-    width: 70%;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    margin: 40px;
-    background-image: linear-gradient(170deg, yellow, green);
-    animation-name: loading;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
-    z-index: 30;
+#whatsapp img {
+    width: 15px;
+    height: 15px;
 }
 
-.first img {
-    height: 500px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    
+#whatsapp:hover {
+    @extend %shadow;
+    opacity: 0.7;
 }
 
-.service-time {
-    position: relative;
-    @extend %card;
-    text-align: left;
-    animation-name: cardanimation;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
-    
-}
-.Upcoming-events{
-    position: relative;
-    @extend %card;
-    animation-name: cardanimationright;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
+#facebook img {
+    width: 15px;
+    height: 15px;
 }
 
-.Upcoming-events li {
-    font-size: 1.2rem;
-    
-}   
+#facebook {
+    @extend %btn;
+    background-color: white;
+    border: 1px solid black;
+    padding: 7px 0px;
+}
+
+#facebook:hover {
+    @extend %shadow;
+    opacity: 0.7;
+}
+
+#tele-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+#tele-btn:hover {
+    opacity: 0.7;
+    @extend %shadow;
+}
 
 .telegram-link {
     position: relative;
@@ -352,45 +514,41 @@ main {
     animation-timing-function: ease-in;
 }
 
-.logo {
-    display: flex;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-}
-.image img {
-    width: 30px;
-    
-}
+//leaders
+.leader {
+    position: relative;
+    @extend %card;
+    @extend %leaders-div;
+    animation-name: cardanimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
 
-.image {
-    border: 3px solid black;
-    border-radius: 50%;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-    margin-right: 5px;
-    padding-left: 13px;
-    padding-top: 12px;
-}
-
-.logo-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
-.container {
-   
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+
+.leader-image {
+    @extend %image-cover;
+    background-color: rgb(245, 245, 245);
 }
 
+.leader-image img {
+    @extend %image;
+}
+
+.write-up {
+    padding: 40px;
+}
+
+.contact-us {
+    color: white;
+}
+
+.about-us {
+    color: white;
+}
+
+//footer
 footer {
     width: 100%;
     min-height: 250px;
@@ -410,78 +568,14 @@ footer {
 }
 
 
-h3 {
-    
-}
+
 footer div {
     margin-right: 20px; 
 }
 
-.about-us {
-    display: flex;
-    width: fit-content;
-    flex-direction: column;
-}
-
-@keyframes cardanimation {
-    from {
-        opacity: 0;
-        left: -100px;
-    }
-
-    to {
-        opacity: 1;
-        left: 0;
-    }
-}
-
-@keyframes cardanimationright {
-    from {
-        opacity: 0;
-        right: -100px;
-    }
-
-    to {
-        opacity: 1;
-        right: 0;
-    }
-}
-
-.leader {
-    position: relative;
-    @extend %card;
-    @extend %leaders-div;
-    animation-name: cardanimation;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    
-}
-
-.leader p {
-
-}
-.leader-image {
-    @extend %image-cover;
-    background-color: rgb(245, 245, 245);
-}
-.leader-image img {
-    @extend %image;
-}
-
-.write-up {
-    padding: 40px;
-}
-
-.contact-us {
-    color: white;
-}
-
-.about-us {
-    color: white;
-}
 
 
-
+//Tablet screens 
 @media screen and (max-width:950px) {
     .logo p {
         font-size: 1.4rem;
@@ -508,6 +602,8 @@ footer div {
     }
 }
 
+
+//Phone screens
 @media screen and (max-width:700px) {
    .Jesus {
         width: 80%;
@@ -542,8 +638,9 @@ footer div {
     .image {
         width: 40px;
         height: 40px;
+        position: relative;
     }
- 
+
 
     .socials {
         display: none;
@@ -555,8 +652,9 @@ footer div {
 
     .image img {
         width: 20px;
-        margin-right: 3px;
-        
+        object-fit: cover;
+        margin-top: 10px;
+        position: absolute;
     }
 
     .first {
@@ -635,7 +733,7 @@ footer div {
     }
         .Jesus-cont p {
             margin: 0 70px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
 
             font-weight: bold;
             color: white;

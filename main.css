@@ -12,7 +12,6 @@
   padding: 50px;
   font-size: 1.2rem;
   font-weight: 600;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
 }
 
 .leader-image img {
@@ -40,6 +39,20 @@
   min-height: 330px;
   font-size: auto;
   border-radius: 0;
+}
+
+#facebook, #whatsapp, #tele-btn {
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: black;
+  min-width: 80px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#tele-btn:hover, #facebook:hover, #whatsapp:hover, .items, .leader, .telegram-link, .Upcoming-events, .service-time {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -79,44 +92,51 @@ body {
     transform: translateX(-100%);
   }
 }
-.Jesus {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  height: 40px;
-  margin-bottom: 40px;
-  border-radius: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: black;
-}
-
-.Jesus:hover .Jesus-cont {
-  animation-play-state: paused;
-}
-
-.Jesus-cont {
-  display: flex;
-  white-space: nowrap;
-  width: -moz-fit-content;
-  width: fit-content;
-  animation: 15s slide infinite linear;
-}
-
-.Jesus-cont p {
-  margin: 0 100px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-}
-
 @keyframes navAn {
   from {
     right: -1500px;
   }
   to {
+    right: 0;
+  }
+}
+@keyframes burger {
+  from {
+    right: -100px;
+    opacity: 0.6;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes loading {
+  from {
+    opacity: 0;
+    left: -100px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes cardanimation {
+  from {
+    opacity: 0;
+    left: -100px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes cardanimationright {
+  from {
+    opacity: 0;
+    right: -100px;
+  }
+  to {
+    opacity: 1;
     right: 0;
   }
 }
@@ -160,7 +180,6 @@ nav p {
   width: 30%;
   background-color: white;
   justify-content: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.15);
   padding-top: 100px;
   text-align: center;
   z-index: 100;
@@ -171,16 +190,6 @@ nav p {
   animation-timing-function: ease-out;
 }
 
-@keyframes burger {
-  from {
-    right: -100px;
-    opacity: 0.6;
-  }
-  to {
-    right: 0;
-    opacity: 1;
-  }
-}
 .item-list {
   transition: all 0.5s ease;
 }
@@ -224,8 +233,8 @@ nav p {
 
 .ham {
   display: block;
-  height: 6px;
-  width: 30px;
+  height: 5px;
+  width: 27px;
   background-color: black;
   margin: 3px;
   border-radius: 5px;
@@ -263,20 +272,6 @@ nav p {
   margin-right: 30px;
 }
 
-.socials img {
-  width: 20px;
-  height: 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
-.social-images img {
-  width: 20px;
-  height: 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -285,16 +280,6 @@ main {
   cursor: pointer;
 }
 
-@keyframes loading {
-  from {
-    opacity: 0;
-    left: -100px;
-  }
-  to {
-    opacity: 1;
-    left: 0;
-  }
-}
 .first {
   height: 600px;
   width: 70%;
@@ -338,14 +323,6 @@ main {
   font-size: 1.2rem;
 }
 
-.telegram-link {
-  position: relative;
-  text-align: center;
-  animation-name: cardanimation;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in;
-}
-
 .logo {
   display: flex;
   width: -moz-fit-content;
@@ -384,27 +361,37 @@ main {
   width: 100%;
 }
 
-footer {
-  width: 100%;
-  min-height: 250px;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: black;
+.Jesus {
+  position: relative;
   display: flex;
-  padding-left: 10%;
-  padding-right: 10%;
   justify-content: center;
-  align-items: baseline;
-  padding-top: 50px;
-  margin-top: 150px;
-  font-size: 0.8rem;
-  position: absolute;
-  bottom: auto;
-  left: 0;
+  align-items: center;
+  width: 70%;
+  height: 40px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: black;
 }
 
-footer div {
-  margin-right: 20px;
+.Jesus:hover .Jesus-cont {
+  animation-play-state: paused;
+}
+
+.Jesus-cont {
+  display: flex;
+  white-space: nowrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  animation: 15s slide infinite linear;
+}
+
+.Jesus-cont p {
+  margin: 0 100px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 
 .about-us {
@@ -414,26 +401,72 @@ footer div {
   flex-direction: column;
 }
 
-@keyframes cardanimation {
-  from {
-    opacity: 0;
-    left: -100px;
-  }
-  to {
-    opacity: 1;
-    left: 0;
-  }
+.socials img {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-@keyframes cardanimationright {
-  from {
-    opacity: 0;
-    right: -100px;
-  }
-  to {
-    opacity: 1;
-    right: 0;
-  }
+
+.social-images img {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
+#tele-btn {
+  margin: 0 10px;
+}
+
+#whatsapp {
+  background-color: white;
+  border: 1px solid black;
+  margin: 0 10px;
+  padding: 7px 0px;
+}
+
+#whatsapp img {
+  width: 15px;
+  height: 15px;
+}
+
+#whatsapp:hover {
+  opacity: 0.7;
+}
+
+#facebook img {
+  width: 15px;
+  height: 15px;
+}
+
+#facebook {
+  background-color: white;
+  border: 1px solid black;
+  padding: 7px 0px;
+}
+
+#facebook:hover {
+  opacity: 0.7;
+}
+
+#tele-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+#tele-btn:hover {
+  opacity: 0.7;
+}
+
+.telegram-link {
+  position: relative;
+  text-align: center;
+  animation-name: cardanimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
 .leader {
   position: relative;
   animation-name: cardanimation;
@@ -455,6 +488,29 @@ footer div {
 
 .about-us {
   color: white;
+}
+
+footer {
+  width: 100%;
+  min-height: 250px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: black;
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: center;
+  align-items: baseline;
+  padding-top: 50px;
+  margin-top: 150px;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: auto;
+  left: 0;
+}
+
+footer div {
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 950px) {
@@ -513,6 +569,7 @@ footer div {
   .image {
     width: 40px;
     height: 40px;
+    position: relative;
   }
   .socials {
     display: none;
@@ -522,7 +579,10 @@ footer div {
   }
   .image img {
     width: 20px;
-    margin-right: 3px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-top: 10px;
+    position: absolute;
   }
   .first {
     height: auto;
@@ -586,7 +646,7 @@ footer div {
   }
   .Jesus-cont p {
     margin: 0 70px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: bold;
     color: white;
   }
