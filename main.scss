@@ -59,6 +59,8 @@
 $color-gig: red;
 
 $sub-color: rgb(39, 39, 39);
+
+$sub-white-color: rgb(231, 231, 231);
 //body
 * {
     box-sizing: border-box;
@@ -337,9 +339,7 @@ main:active {
     align-items: center;
 }
 
-.logo p {
-    border-color: red;
-}
+
 //Body
 main {
     display: flex;
@@ -604,9 +604,12 @@ footer {
 
 footer div {
     margin-right: 20px; 
+    color: $sub-white-color;
 }
 
-
+footer p {
+    color: $sub-white-color;
+}
 
 //Tablet screens 
 @media screen and (max-width:950px) {

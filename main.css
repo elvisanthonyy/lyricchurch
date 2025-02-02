@@ -309,10 +309,6 @@ main:active {
   align-items: center;
 }
 
-.logo p {
-  border-color: red;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -544,6 +540,11 @@ footer {
 
 footer div {
   margin-right: 20px;
+  color: rgb(231, 231, 231);
+}
+
+footer p {
+  color: rgb(231, 231, 231);
 }
 
 @media screen and (max-width: 950px) {
