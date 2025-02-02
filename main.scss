@@ -58,6 +58,7 @@
 
 $color-gig: red;
 
+$sub-color: rgb(39, 39, 39);
 //body
 * {
     box-sizing: border-box;
@@ -187,8 +188,8 @@ nav {
 nav p {
     font-size: 1.4rem;
     font-weight: bold;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .items {
@@ -314,7 +315,31 @@ main:active {
     align-items: center;
     margin-right: 30px;
 }
+.image img {
+    width: 32px;
 
+}
+
+.image {
+    border: 2.5px solid $sub-color;
+    border-radius: 50%;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+    padding-left: 13px;
+    padding-top: 12px;
+}
+
+.logo-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo p {
+    border-color: red;
+}
 //Body
 main {
     display: flex;
@@ -360,6 +385,10 @@ main {
 
 }
 
+.service-time li {
+    color: $sub-color;
+}
+
 .Upcoming-events {
     position: relative;
     @extend %card;
@@ -370,6 +399,7 @@ main {
 
 .Upcoming-events li {
     font-size: 1.2rem;
+    color: $sub-color;
 
 }
 
@@ -381,27 +411,6 @@ main {
     align-items: center;
 }
 
-.image img {
-    width: 30px;
-
-}
-
-.image {
-    border: 3px solid black;
-    border-radius: 50%;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-    margin-right: 5px;
-    padding-left: 13px;
-    padding-top: 12px;
-}
-
-.logo-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 .container {
@@ -532,6 +541,10 @@ main {
     animation-timing-function: ease-in;
 }
 
+.telegram-link p {
+    color: $sub-color;
+}
+
 //leaders
 .leader {
     position: relative;
@@ -542,7 +555,9 @@ main {
     animation-timing-function: ease-in;
 
 }
-
+.leader p {
+    color: $sub-color;
+}
 
 
 .leader-image {
@@ -657,6 +672,7 @@ footer div {
         width: 40px;
         height: 40px;
         position: relative;
+       
     }
 
 
@@ -746,8 +762,8 @@ footer div {
     }
 
     .logo p {
-        border-bottom: 3px solid black;
-        border-top: 3px solid black;
+        border-bottom: 2.5px solid black;
+        border-top: 2.5px solid black;
     }
         .Jesus-cont p {
             margin: 0 70px;

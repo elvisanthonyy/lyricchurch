@@ -163,8 +163,8 @@ nav {
 nav p {
   font-size: 1.4rem;
   font-weight: bold;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 .items {
@@ -288,6 +288,31 @@ main:active {
   margin-right: 30px;
 }
 
+.image img {
+  width: 32px;
+}
+
+.image {
+  border: 2.5px solid rgb(39, 39, 39);
+  border-radius: 50%;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  margin-right: 5px;
+  padding-left: 13px;
+  padding-top: 12px;
+}
+
+.logo-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo p {
+  border-color: red;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -327,6 +352,10 @@ main {
   animation-timing-function: ease-in;
 }
 
+.service-time li {
+  color: rgb(39, 39, 39);
+}
+
 .Upcoming-events {
   position: relative;
   animation-name: cardanimationright;
@@ -336,33 +365,13 @@ main {
 
 .Upcoming-events li {
   font-size: 1.2rem;
+  color: rgb(39, 39, 39);
 }
 
 .logo {
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
-  justify-content: center;
-  align-items: center;
-}
-
-.image img {
-  width: 30px;
-}
-
-.image {
-  border: 3px solid black;
-  border-radius: 50%;
-  padding: 10px;
-  height: 50px;
-  width: 50px;
-  margin-right: 5px;
-  padding-left: 13px;
-  padding-top: 12px;
-}
-
-.logo-image {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -483,11 +492,19 @@ main {
   animation-timing-function: ease-in;
 }
 
+.telegram-link p {
+  color: rgb(39, 39, 39);
+}
+
 .leader {
   position: relative;
   animation-name: cardanimation;
   animation-duration: 1s;
   animation-timing-function: ease-in;
+}
+
+.leader p {
+  color: rgb(39, 39, 39);
 }
 
 .leader-image {
@@ -657,8 +674,8 @@ footer div {
     padding-top: 30px;
   }
   .logo p {
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
+    border-bottom: 2.5px solid black;
+    border-top: 2.5px solid black;
   }
   .Jesus-cont p {
     margin: 0 70px;
