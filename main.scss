@@ -361,11 +361,17 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 0;
-    
+    justify-content: center;
+
 }
 
 
-
+li {
+    color: red;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: 700;
+}
 .first {
     height: 600px;
     width: 70%;
@@ -394,10 +400,10 @@ main {
 .service-time {
     position: relative;
     @extend %card;
-    text-align: left;
     animation-name: cardanimation;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
+    text-align: center;
 
 }
 
@@ -411,6 +417,7 @@ main {
     animation-name: cardanimationright;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
+    text-align: center;
 }
 
 .Upcoming-events li {
@@ -442,9 +449,7 @@ main {
     transition: all .5s ease-in;
 }
 
-.stick {
-   
-}
+
 .logo {
     display: flex;
     width: fit-content;
@@ -576,6 +581,8 @@ main {
 
 .telegram-link {
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
     @extend %card;
     text-align: center;
     animation-name: cardanimation;
@@ -592,6 +599,8 @@ main {
     position: relative;
     @extend %card;
     @extend %leaders-div;
+    margin-left: auto;
+    margin-right: auto;
     animation-name: cardanimation;
     animation-duration: 1s;
     animation-timing-function: ease-in;
