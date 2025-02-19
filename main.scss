@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin: 50px;
+    margin: 30px;
     height: fit-content;
     width: 70%;
     align-items: center;
@@ -270,9 +270,9 @@ nav p {
     cursor: pointer;
     height: fit-content;
     position: absolute;
-    top: 35px;
+    //top: 35px;
     right: 15%;
-    position: fixed;
+    //position: fixed;
     animation-name: navAn;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
@@ -698,8 +698,13 @@ footer p {
 
 //Phone screens
 @media screen and (max-width:700px) {
+
+    #lyric {
+        font-size: 0.9em;
+        padding: 0px 10px;
+    }
     %card {
-        width: 90%;
+        width: 89%;
     }
    .Jesus {
         width: 80%;
@@ -710,15 +715,21 @@ footer p {
         padding-bottom: 0;
         padding-top: 0;
         height: 70px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        top: 20px;
+        border-radius: 409px;
+        margin-bottom: 50px;
+        //@extend %shadow;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.103), 0 4px 25px 0 rgba(0, 0, 0, 0.075);
    }
    main {
         margin-top: 0;
         padding-top: 0;
    }
-   .menu {
-     top: 20px;
-     
-    }
+   
+    
    .menu {
         right: 5%;
    }
@@ -733,8 +744,8 @@ footer p {
     
     
     .image {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         position: relative;
        
     }
@@ -749,20 +760,17 @@ footer p {
     }
 
     .image img {
-        width: 23px;
-        height: 23px;
+        width: 20px;
+        height: 20px;
         object-fit: contain;
-        margin-left: 3px;
+        margin-left: 2px;
         //margin-top: 10px;
     }
     #lyric {
         padding: 1px;
     }
 
-    #meet-leader {
-        height: 100px;
-        //background-color: red;
-    }
+   
 
     .image p {
         padding: 10px;
@@ -770,7 +778,7 @@ footer p {
 
     .first {
         height: auto;
-        width: 90%;
+        width: 89%;
         //margin-top: 5px;
     }
 
@@ -779,8 +787,9 @@ footer p {
         width: 100%;
     }
 
+
     .ham {
-        height: 4px;
+        height: 3px;
         width: 20px;
     }
     .service-time {
@@ -828,6 +837,14 @@ footer p {
     #meet-leader {
         height: 70px;
         font-size: 1em;
+        margin: 0;
+        height: 70px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        top: 20px;
+        border-radius: 409px;
+        margin-bottom: 50px;
     }
 
     .leader p {
@@ -857,6 +874,7 @@ footer p {
         }
         .Jesus {
             height: 30px;
+            width: 90%;
         }
 
 }

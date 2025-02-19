@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: 50px;
+  margin: 30px;
   height: -moz-fit-content;
   height: fit-content;
   width: 70%;
@@ -240,9 +240,7 @@ nav p {
   height: -moz-fit-content;
   height: fit-content;
   position: absolute;
-  top: 35px;
   right: 15%;
-  position: fixed;
   animation-name: navAn;
   animation-duration: 0.5s;
   animation-timing-function: ease-in;
@@ -627,8 +625,12 @@ footer p {
   }
 }
 @media screen and (max-width: 700px) {
+  #lyric {
+    font-size: 0.9em;
+    padding: 0px 10px;
+  }
   .service-time, .Upcoming-events, .telegram-link, .leader {
-    width: 90%;
+    width: 89%;
   }
   .Jesus {
     width: 80%;
@@ -639,13 +641,17 @@ footer p {
     padding-bottom: 0;
     padding-top: 0;
     height: 70px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20px;
+    border-radius: 409px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.103), 0 4px 25px 0 rgba(0, 0, 0, 0.075);
   }
   main {
     margin-top: 0;
     padding-top: 0;
-  }
-  .menu {
-    top: 20px;
   }
   .menu {
     right: 5%;
@@ -657,8 +663,8 @@ footer p {
     font-size: 1.05rem;
   }
   .image {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     position: relative;
   }
   .socials {
@@ -668,31 +674,28 @@ footer p {
     width: 50%;
   }
   .image img {
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
     -o-object-fit: contain;
        object-fit: contain;
-    margin-left: 3px;
+    margin-left: 2px;
   }
   #lyric {
     padding: 1px;
-  }
-  #meet-leader {
-    height: 100px;
   }
   .image p {
     padding: 10px;
   }
   .first {
     height: auto;
-    width: 90%;
+    width: 89%;
   }
   .first img {
     height: 100%;
     width: 100%;
   }
   .ham {
-    height: 4px;
+    height: 3px;
     width: 20px;
   }
   .service-time {
@@ -731,6 +734,14 @@ footer p {
   #meet-leader {
     height: 70px;
     font-size: 1em;
+    margin: 0;
+    height: 70px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20px;
+    border-radius: 409px;
+    margin-bottom: 50px;
   }
   .leader p {
     font-size: 0.9rem;
@@ -754,5 +765,6 @@ footer p {
   }
   .Jesus {
     height: 30px;
+    width: 90%;
   }
 }/*# sourceMappingURL=main.css.map */
