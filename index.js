@@ -1,7 +1,7 @@
-const ham = document.getElementById('menu')
-const items = document.querySelector('.items')
-const cancel = document.querySelector('.menu')
-const overlay = document.getElementById('overlay')
+const ham = document.getElementById('menu');
+const items = document.querySelector('.items');
+const cancel = document.querySelector('.menu') ;
+const overlay = document.getElementById('overlay') ;
 const listItem =  document.querySelector('.item-list')
 const leader = document.getElementById('meet-leader')
 const navBar = document.getElementById('homee')
@@ -35,16 +35,18 @@ items.addEventListener('click', e => {
 })
 
 
-window.onscroll = () => {
-    let navHeight = navBar.clientHeight
+/*window.onscroll = () => {
+    let navHeight = 150
     let leaderPosition = leader.getBoundingClientRect()
-    if(leaderPosition.y <= navHeight) {
+    if(leaderPosition.y < navHeight) {
         navBar.classList.add('active')
+       //alert(alert(leaderPosition.y))
+    } else if (leaderPosition.y == 0) {
         leader.classList.add('active')
-
-    } else {
+        
+    }  else {
         navBar.classList.remove('active')
         leader.classList.remove('active')
     }
 
-}
+}*/
