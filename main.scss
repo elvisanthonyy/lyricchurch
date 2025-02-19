@@ -699,14 +699,14 @@ footer p {
 //Phone screens
 @media screen and (max-width:700px) {
     %card {
-        width: 80%;
+        width: 90%;
     }
    .Jesus {
         width: 80%;
    }
     nav {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
         padding-bottom: 0;
         padding-top: 0;
         height: 70px;
@@ -717,9 +717,10 @@ footer p {
    }
    .menu {
      top: 20px;
-   }
+     
+    }
    .menu {
-        right: 10%;
+        right: 5%;
    }
    main {
      
@@ -769,7 +770,7 @@ footer p {
 
     .first {
         height: auto;
-        width: 80%;
+        width: 90%;
         //margin-top: 5px;
     }
 
@@ -809,7 +810,7 @@ footer p {
     .leader {
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
-        width: 70%;
+        width: 80%;
         height: fit-content;
         padding-bottom: 0;
     }
@@ -857,4 +858,5 @@ footer p {
         .Jesus {
             height: 30px;
         }
+
 }

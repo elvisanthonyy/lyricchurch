@@ -628,14 +628,14 @@ footer p {
 }
 @media screen and (max-width: 700px) {
   .service-time, .Upcoming-events, .telegram-link, .leader {
-    width: 80%;
+    width: 90%;
   }
   .Jesus {
     width: 80%;
   }
   nav {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 0;
     padding-top: 0;
     height: 70px;
@@ -648,7 +648,7 @@ footer p {
     top: 20px;
   }
   .menu {
-    right: 10%;
+    right: 5%;
   }
   main {
     margin-top: 0;
@@ -685,7 +685,7 @@ footer p {
   }
   .first {
     height: auto;
-    width: 80%;
+    width: 90%;
   }
   .first img {
     height: 100%;
@@ -716,7 +716,7 @@ footer p {
   .leader {
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
-    width: 70%;
+    width: 80%;
     height: -moz-fit-content;
     height: fit-content;
     padding-bottom: 0;
