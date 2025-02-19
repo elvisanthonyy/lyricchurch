@@ -72,6 +72,7 @@ $sub-white-color: rgb(231, 231, 231);
 
 
 body {
+    position: relative;
     font-family: "Open Sans", serif;
     background-color: rgb(245, 245, 245);
     
@@ -84,25 +85,15 @@ body.active {
 #overlay {
     top: 0;
     left: 0;
+    opacity: 0.9;
+    width: 40%;
     background-color: black;
     width: 100vw;
-    z-index: 32;
-    opacity: 0;
-    display: none;
+    z-index: 35;
     transition: all 0.5s ease;
 }
 
-.nav-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    display: flex;
-}
-#overlay.active {
-    display: block;
-    opacity: 0.8;
-}
+
 
 
 //animations
@@ -192,34 +183,59 @@ body.active {
 
 
 //Nav
-nav {
+
+.nav {
+    z-index: 40;
+    top: 0;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    width: 100%;
+    padding-top: 50px;
+}
+.nav-items-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     top: 40px;
-    border-radius: 70px;
+    border-radius: 60px;
     width: 70%;
     left: 15%;
-    height: 80px;
+    height: 70px;
     padding-left: 5%;
     padding-right: 5%;
     background-color: hsla(0, 0%, 100%, 0.808);
-    z-index: 35;
     animation-name: navAn;
     animation-duration: 1.5s;
     animation-timing-function: ease-in;
     backdrop-filter: blur(20px);
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
     @extend %shadow;
 }
+
+
+
+
+  .menu.active .ham:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 5px);
+  }
+   
+  .menu.active .ham:nth-child(2) {
+       opacity: 0;
+   }
+  .menu.active .ham:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+  }
+
 
 #homee.active {
     position: relative;
 }
 
 
-nav p {
+.nav-items-main p {
     font-size: 1.4rem;
     font-weight: bold;
     border-top: 2px solid black;
@@ -227,31 +243,37 @@ nav p {
 }
 
 .nav-menu {
+    display: none;
+    width: 100%;
+    height: 100vh;
     position: absolute;
-    top: -20px;
-    left: -7%;
+    left: 0;
+    top: 0;
+    z-index: 40;
+}
+
+.nav-menu.active {
+    display: flex;
 }
 
 .items {
-    position: fixed;
-    right: -20px;
-    display: none;
+    display: grid;
+    top: 0;
+    right: 0;
+    position: absolute;
     grid-template-rows: 70px 70px 70px 70px;
-    width: 400px;
+    width: 500px;
     justify-content: space-evenly;
     font-size: 16px;
     align-items: center;
-    position: absolute;
     height: 100vh;
-    width: 30%;
+    width: 40%;
     background-color: white;
     justify-content: center;
     @extend %shadow;
-    padding-top: 100px;
+    padding-top: 110px;
     text-align: center;
-    z-index: 36;
-    position: fixed;
-    opacity: 0;
+    z-index: 35;
 }
 
 
@@ -266,12 +288,6 @@ nav p {
     color: green;
 
 }
-
-#items.active {
-    display: grid;
-    opacity: 1;
-}
-
 
 
 .items a {
@@ -288,10 +304,7 @@ nav p {
     cursor: pointer;
     height: fit-content;
     position: absolute;
-    //top: 35px;
-    right: 5%;
-    //position: fixed;
-    //animation-name: navAn;
+    right: 20%;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
     -webkit-tap-highlight-color: transparent;
@@ -322,18 +335,6 @@ main:active {
 
 .nav-cont {
     z-index: 40;
-}
-
-.menu.close .ham:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu.close .ham:nth-child(2) {
-    opacity: 0;
-}
-
-.menu.close .ham:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .nav-items {
@@ -734,30 +735,35 @@ footer p {
    .Jesus {
         width: 80%;
    }
-    nav {
+
+   .nav {
+        height: 90px;
+        padding-top: 20px;
+   }
+    .nav-items-main {
         padding-left: 5%;
         padding-right: 5%;
         padding-bottom: 0;
         padding-top: 0;
-        height: 70px;
+        height: 50px;
         width: 90%;
         left: 5%;
         //margin-left: auto;
         //margin-right: auto;
         top: 20px;
         border-radius: 409px;
-        margin-bottom: 50px;
         //@extend %shadow;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.103), 0 4px 25px 0 rgba(0, 0, 0, 0.075);
    }
+
    main {
-        margin-top: 400px;
+        margin-top: -20px;
         padding-top: 0;
    }
    
     
    .menu {
-        right: 5%;
+        right: 10%;
    }
    main {
      
