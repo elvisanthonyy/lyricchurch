@@ -12,7 +12,8 @@
     padding: 50px;
     font-size: 1.2rem;
     font-weight: 600;
-    @extend %shadow;
+    //@extend %shadow;
+    background-color: white;
    
 }
 %image {
@@ -72,6 +73,7 @@ $sub-white-color: rgb(231, 231, 231);
 
 body {
     font-family: "Open Sans", serif;
+    background-color: rgb(245, 245, 245);
     
 }
 
@@ -213,10 +215,15 @@ nav p {
     border-bottom: 2px solid black;
 }
 
+.nav-menu {
+    position: absolute;
+    top: -20px;
+    left: -7%;
+}
+
 .items {
     position: fixed;
-    top: 0;
-    right: 0;
+    right: -20px;
     display: none;
     grid-template-rows: 70px 70px 70px 70px;
     width: 400px;
@@ -839,7 +846,7 @@ footer p {
         font-size: 1em;
         margin: 0;
         height: 70px;
-        width: 90%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
         top: 20px;
