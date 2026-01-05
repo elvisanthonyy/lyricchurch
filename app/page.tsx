@@ -292,7 +292,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 w-[90%] font-semibold my-8">
           <ImagePrevComp imageURL="/blessings.jpg" />
-          <ImagePrevComp imageURL="/Jerry.jpg" />
+          <ImagePrevComp imageURL="/Jerryy.jpg" />
           <ImagePrevComp imageURL="/nav_body.jpg" />
           <ImagePrevComp imageURL="/Emma.jpg" />
         </div>
