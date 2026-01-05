@@ -11,8 +11,8 @@ const GalleryMain = ({ albums }: ChildProps) => {
   const router = useRouter();
   return (
     <div className="py-5 w-full bg-white h-dvh">
-      <div className="flex mb-4 overflow-hidden rounded-xl mx-auto items-center w-[95%] h-15">
-        <div className="bg-gray-200 font-semibold rounded-xl h-full items-center flex justify-center w-[50%]">
+      <div className="flex mb-4 bg-gray-100 overflow-hidden rounded-xl mx-auto items-center w-[95%] h-15">
+        <div className="bg-black text-white font-semibold rounded-xl h-full items-center flex justify-center w-[50%]">
           Albums
         </div>
         <div className=" flex justify-center w-[50%]">All</div>
@@ -27,7 +27,10 @@ const GalleryMain = ({ albums }: ChildProps) => {
             }
             key={album._id.toString()}
           >
-            <GalleryCategoryComp name={album.name} thumbnailURL="/Jerryy.jpg" />
+            <GalleryCategoryComp
+              name={album.name}
+              thumbnailURL="/nav_body.jpg"
+            />
           </div>
         ))}
       </div>
