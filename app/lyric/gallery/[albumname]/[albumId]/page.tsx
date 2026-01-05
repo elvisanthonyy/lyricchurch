@@ -27,7 +27,7 @@ const page = async ({
   return (
     <div>
       <GalleryNav albumName={decodeURI(paramsBody.albumname)} />
-      <AlbumMain />
+      <AlbumMain albumImages={data.albumImages} />
     </div>
   );
 };
