@@ -298,7 +298,7 @@ export default function Home() {
         </div>
 
         <button className="flex cursor-pointer justify-center items-center w-[90%] h-15 bg-black text-white rounded-2xl">
-          See Gallery
+          <Link href={"/lyric/gallery"}>See Gallery</Link>
         </button>
       </div>
       <Footer />
