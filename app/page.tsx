@@ -297,9 +297,11 @@ export default function Home() {
           <ImagePrevComp imageURL="/Emma.jpg" />
         </div>
 
-        <button className="flex cursor-pointer justify-center items-center w-[90%] h-15 bg-black text-white rounded-2xl">
-          <Link href={"/lyric/gallery"}>See Gallery</Link>
-        </button>
+        <Link className="w-[90%]" href={"/lyric/gallery"}>
+          <button className="flex cursor-pointer justify-center w-full items-center  h-15 bg-black text-white rounded-2xl">
+            See Gallery
+          </button>
+        </Link>
       </div>
       <Footer />
     </div>
