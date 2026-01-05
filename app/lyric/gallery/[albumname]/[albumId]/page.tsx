@@ -1,6 +1,8 @@
 import GalleryNav from "@/app/components/gallery/GalleryNav";
 import AlbumMain from "@/app/components/gallery/AlbumMain";
 
+export const dynamic = "force-dynamic";
+
 const baseURL = process.env.BASE_URL;
 
 const page = async ({
