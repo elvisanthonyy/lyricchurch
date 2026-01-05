@@ -27,7 +27,7 @@ const GalleryMain = ({ albums }: ChildProps) => {
             }
             key={album._id.toString()}
           >
-            <GalleryCategoryComp name={album.name} thumbnailURL="/Jerry.jpg" />
+            <GalleryCategoryComp name={album.name} thumbnailURL="/Jerryy.jpg" />
           </div>
         ))}
       </div>
