@@ -8,7 +8,7 @@ interface ChildProps {
 
 const AlbumMain = ({ albumImages }: ChildProps) => {
   return (
-    <div className="py-5 grid grid-cols-2 place-content-start w-full bg-white h-dvh">
+    <div className="py-5 grid grid-cols-2 place-content-start w-full px-5 bg-white h-dvh">
       {albumImages?.map((image: IGalleryImage) => (
         <div
           className={`cursor-pointer bg-red-500 relative flex flex-col overflow-hidden shrink-0 mt-5  w-[95%] aspect-square mx-auto mr-2 rounded-2xl  bg-linear-to-br `}
