@@ -22,9 +22,7 @@ const PartnerNav = ({ albumName }: ChildProps) => {
         <div className="mr-5">
           <BackButton />
         </div>
-        <div className="mr-3 text-lg font-semibold">
-          Partner With Lyric Church
-        </div>
+        <div className="mr-3 text-lg font-semibold">Back</div>
       </div>
     </div>
   );
