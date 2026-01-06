@@ -50,7 +50,7 @@ const PartnerForm = ({ setIsFormOpen, plan }: ChildProps) => {
   return (
     <div
       onClick={() => setIsFormOpen(false)}
-      className="z-8 flex items-end bg-black/80 w-full h-dvh fixed bottom-0 laft-o"
+      className="z-8 flex items-end backdrop-blur-xs bg-black/90 w-full h-dvh fixed bottom-0 laft-o"
     >
       <div
         onClick={(e) => e.stopPropagation()}
