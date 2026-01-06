@@ -6,6 +6,7 @@ export interface IPartner extends Document {
   number: number;
   password: string;
   paymentPlan: string;
+  planRange: string;
 }
 
 const partnerSchema = new mongoose.Schema<IPartner>(
@@ -16,13 +17,17 @@ const partnerSchema = new mongoose.Schema<IPartner>(
     },
     email: {
       type: String,
-      unique: true,
+      required: true,
     },
     number: {
       type: Number,
-      unique: true,
+      required: true,
     },
     paymentPlan: {
+      type: String,
+      required: true,
+    },
+    planRange: {
       type: String,
       required: true,
     },

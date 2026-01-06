@@ -24,7 +24,7 @@ const PartnerMain = ({ plans }: ChildProps) => {
       {isFormOpen && (
         <PartnerForm plan={selectedPlan} setIsFormOpen={setIsFormOpen} />
       )}
-      <div className="relative w-full mb-5 overflow-hidden">
+      <div className="relative rounded-br-4xl rounded-bl-4xl w-full mb-5 overflow-hidden">
         <PartnerNav />
         <Image
           src={"/partnership.jpg"}

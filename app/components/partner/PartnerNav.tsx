@@ -1,5 +1,5 @@
 import BackButton from "../BackButton";
-import { FaHandshakeSimple } from "react-icons/fa6";
+
 import Image from "next/image";
 interface ChildProps {
   albumName?: string;
@@ -19,6 +19,9 @@ const PartnerNav = ({ albumName }: ChildProps) => {
       </div>
 
       <div className="flex items-center px-4 h-10  rounded-2xl 0">
+        <div className="mr-5">
+          <BackButton />
+        </div>
         <div className="mr-3 text-lg font-semibold">
           Partner With Lyric Church
         </div>
