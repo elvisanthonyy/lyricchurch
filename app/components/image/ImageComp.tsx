@@ -10,7 +10,7 @@ interface ChildProps {
 const ImageComp = ({ image }: ChildProps) => {
   return (
     <div
-      className={`cursor-pointer bg-red-300 relative flex flex-col overflow-hidden shrink-0 mt-5  w-[95%] mx-auto mr-2 rounded-2xl  bg-linear-to-br `}
+      className={`cursor-pointer bg-gray-100 relative flex flex-col overflow-hidden shrink-0 mt-5  w-[95%] mx-auto mr-2 rounded-2xl  bg-linear-to-br `}
     >
       <Image
         src={image.imageURL}

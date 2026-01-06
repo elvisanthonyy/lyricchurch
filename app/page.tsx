@@ -261,9 +261,11 @@ export default function Home() {
             className="w-full "
           />
         </div>
-        <div className="flex shrink-0 mb-5 cursor-pointer justify-center items-center w-[90%] h-14 bg-lyric-gray rounded-2xl text-white">
-          <Link href={"/us/partner"}>Partner with us</Link>
-        </div>
+        <Link className="w-[90%]" href={"/us/partner"}>
+          <div className="flex shrink-0 mb-5 cursor-pointer justify-center items-center w-full h-14 bg-lyric-gray rounded-2xl text-white">
+            Partner with us
+          </div>
+        </Link>
       </div>
 
       <div className="flex text-lyric-gray justify-center border-lyric-lightgray items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">

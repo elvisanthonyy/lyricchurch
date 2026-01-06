@@ -1,5 +1,4 @@
 import PartnerMain from "@/app/components/partner/PartnerMain";
-import PartnerNav from "@/app/components/partner/PartnerNav";
 
 export const dynamic = "force-dynamic";
 
@@ -14,8 +13,7 @@ const page = async () => {
   const data = await req.json();
   console.log(data);
   return (
-    <div className="bg-white">
-      <PartnerNav />
+    <div className="flex flex-col bg-white h-auto">
       <PartnerMain plans={data.partnershipPlans} />
     </div>
   );
