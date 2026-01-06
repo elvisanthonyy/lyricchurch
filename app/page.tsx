@@ -44,6 +44,13 @@ export default function Home() {
     setInView(rect.top < window.innerHeight && rect.bottom > 0);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     setLoading(true);
     api
@@ -143,7 +150,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="relative px-20 flex text-center justify-center items-center overflow-hidden w-[95%] h-30 rounded-2xl bg-white border mx-auto my-7">
+      <div className="relative border-lyric-lightgray text-lyric-gray  px-20 flex text-center justify-center items-center overflow-hidden w-[95%] h-30 rounded-2xl bg-white border mx-auto my-7">
         For Information on merch, contact 09165534410
       </div>
       <div className="relative flex justify-center items-center overflow-hidden w-[95%] min-h-60 max-h-85 rounded-2xl bg-white mx-auto my-4">
@@ -158,7 +165,7 @@ export default function Home() {
           <FaBackward /> <FaPause className="text-2xl" /> <FaForward />
         </div>
       </div>
-      <div className="relative px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
+      <div className="relative border-lyric-gray text-lyric-gray  px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
         <div className="flex flex-col mb-8 justify-center items-center font-bold my-5">
           <FaMapMarkerAlt className=" mb-5 text-lg" />
           <div className="text-sm">
@@ -180,7 +187,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
+      <div className="flex border-lyric-gray text-lyric-gray  flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
         <div className="flex items-center mb-5 font-semibold text-lg">
           <FaBook className="mr-5 text-lg" />
           Sermon Library
@@ -193,7 +200,7 @@ export default function Home() {
           <FaTelegram className="mr-3 text-2xl" /> Telegram
         </button>
       </div>
-      <div className="flex flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
+      <div className="flex border-lyric-gray text-lyric-gray flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
         <div className="w-[80%] font-semibold my-8">
           Follow us on YouTube and stay updated
         </div>
@@ -201,7 +208,7 @@ export default function Home() {
           <FaYoutube className="mr-3 text-2xl" /> Youtube
         </button>
       </div>
-      <div className="flex justify-center items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
+      <div className="flex text-lyric-gray border-lyric-lightgray justify-center items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
         <div className="flex items-center">
           <FaCalendar className="mr-5 text-lg" />
           Event Calender
@@ -254,12 +261,12 @@ export default function Home() {
             className="w-full "
           />
         </div>
-        <div className="flex shrink-0 mb-5 cursor-pointer justify-center items-center w-[90%] h-14 bg-black rounded-2xl text-white">
+        <div className="flex shrink-0 mb-5 cursor-pointer justify-center items-center w-[90%] h-14 bg-lyric-gray rounded-2xl text-white">
           <Link href={"/us/partner"}>Partner with us</Link>
         </div>
       </div>
 
-      <div className="flex justify-center items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
+      <div className="flex text-lyric-gray justify-center border-lyric-lightgray items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
         <FaUser className="mr-5 text-lg" />
         Meet Our Leader
       </div>
@@ -271,7 +278,7 @@ export default function Home() {
           >
             <div className="p-5">
               <div className="font-bold text-lg mb-2">{leader.name}</div>
-              <div className="mb-5">{leader.description}</div>
+              <div className="mb-5 text-lyric-gray">{leader.description}</div>
             </div>
 
             <div className="bg-black w-full h-fit">
@@ -287,7 +294,7 @@ export default function Home() {
         ))}
       </div>
       <div className="flex flex-col justify-center items-center mx-auto mb-5 w-[95%]  text-center  bg-white py-10">
-        <div className="flex cursor-pointer justify-center items-center w-[90%] h-15 text-black rounded-2xl">
+        <div className="flex cursor-pointer justify-center items-center w-[90%] h-15 text-lyric-gray rounded-2xl">
           <FaImage className="mr-3 text-2xl" /> Photo Gallery
         </div>
         <div className="grid grid-cols-2 w-[90%] font-semibold my-8">
@@ -298,11 +305,17 @@ export default function Home() {
         </div>
 
         <Link className="w-[90%]" href={"/lyric/gallery"}>
-          <button className="flex cursor-pointer justify-center w-full items-center  h-15 bg-black text-white rounded-2xl">
+          <button className="flex cursor-pointer justify-center w-full items-center  h-15 bg-lyric-gray text-white rounded-2xl">
             See Gallery
           </button>
         </Link>
       </div>
+      <button
+        onClick={scrollToTop}
+        className="z-20 fixed bottom-10 right-10 h-15 w-15 border shadow-2xl border-black flex justify-center items-center bg-white/0 backdrop-blur-2xl rounded-full"
+      >
+        <FaAngleUp />
+      </button>
       <Footer />
     </div>
   );

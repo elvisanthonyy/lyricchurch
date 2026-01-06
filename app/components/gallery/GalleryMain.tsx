@@ -12,7 +12,7 @@ const GalleryMain = ({ albums }: ChildProps) => {
   return (
     <div className="py-5 w-full bg-white h-dvh">
       <div className="flex mb-4 bg-gray-100 overflow-hidden rounded-xl mx-auto items-center w-[95%] h-15">
-        <div className="bg-black text-white font-semibold rounded-xl h-full items-center flex justify-center w-[50%]">
+        <div className="bg-lyric-gray text-white font-semibold rounded-xl h-full items-center flex justify-center w-[50%]">
           Albums
         </div>
         <div className=" flex justify-center w-[50%]">All</div>

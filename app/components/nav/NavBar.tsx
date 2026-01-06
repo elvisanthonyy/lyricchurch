@@ -21,7 +21,9 @@ const NavBar = ({ name }: ChildProps) => {
             <div className="flex mr-3 justify-start items-center">
               <Image src={"/lyriclogo.png"} alt="logo" height={30} width={30} />
             </div>
-            <div className="text-lg font-semibold">Lyric Church</div>
+            <div className="text-lg text-lyric-gray font-semibold">
+              Lyric Church
+            </div>
           </div>
         )}
         {name !== "home" && <BackButton />}
@@ -34,17 +36,17 @@ const NavBar = ({ name }: ChildProps) => {
           <span
             className={`transition-all duration-400 ease-in w-5 m-1 ${
               isMenuOpen ? "-rotate-45 translate-y-1" : ""
-            } rounded-2xl h-0.5 bg-black block`}
+            } rounded-2xl h-0.5 bg-lyric-gray block`}
           ></span>
           <span
             className={`transition-all duration-400 ease-in w-5 mb-1 ${
               isMenuOpen ? "opacity-0" : ""
-            } rounded-2xl h-0.5 bg-black block`}
+            } rounded-2xl h-0.5 bg-lyric-gray block`}
           ></span>
           <span
             className={`transition-all duration-400 ease-in w-5 mb-1 ${
               isMenuOpen ? "rotate-45 -translate-y-2" : ""
-            } rounded-2xl h-0.5 bg-black block`}
+            } rounded-2xl h-0.5 bg-lyric-gray block`}
           ></span>
         </div>
       </div>

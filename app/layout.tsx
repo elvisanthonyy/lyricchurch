@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lyric Church",
-  description: "Re-Introducing youths to God",
+  description: "Reintroducing God to our generation",
 };
 
 export default function RootLayout({

@@ -1,10 +1,20 @@
-import React from "react";
-import NavBar from "@/app/components/nav/NavBar";
+import PartnerMain from "@/app/components/partner/PartnerMain";
+import PartnerNav from "@/app/components/partner/PartnerNav";
 
-const page = () => {
+const baseURL = process.env.BASE_URL;
+
+export const metadata = {
+  title: "Partner With Us",
+};
+
+const page = async () => {
+  const req = await fetch(`${baseURL}/api/plans/partnership`);
+  const data = await req.json();
+  console.log(data);
   return (
     <div>
-      <NavBar />
+      <PartnerNav />
+      <PartnerMain plans={data.partnershipPlans} />
     </div>
   );
 };
