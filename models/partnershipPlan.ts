@@ -2,7 +2,7 @@ import mongoose, { Document, models, Model, Types } from "mongoose";
 
 export interface IPartnershipPlan extends Document {
   name: string;
-  priceRange: string;
+  range: string;
 }
 
 const partnershipPlanSchema = new mongoose.Schema<IPartnershipPlan>(
@@ -11,7 +11,7 @@ const partnershipPlanSchema = new mongoose.Schema<IPartnershipPlan>(
       type: String,
       required: true,
     },
-    priceRange: {
+    range: {
       type: String,
       required: true,
     },

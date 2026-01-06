@@ -7,12 +7,11 @@ interface ChildProps {
 
 const PartnerNav = ({ albumName }: ChildProps) => {
   return (
-    <div className="flex border-b border-b-lyric-lightgray justify-between items-center px-3 w-full bg-white h-20">
+    <div className="absolute left-[50%] -translate-x-[50%] top-5 w-[90%] rounded-[40px] flex  justify-between items-center px-3 border border-white bg-white/50 backdrop-blur-2xl h-20">
       <BackButton />
       {albumName && <div>{albumName}</div>}
-      <div className="flex items-center px-4 h-10  rounded-2xl bg-gray-100">
+      <div className="flex items-center px-4 h-10  rounded-2xl 0">
         <div className="mr-3">Partner With Lyric Church</div>
-        <FaHandshakeSimple className="text-xl" />
       </div>
     </div>
   );

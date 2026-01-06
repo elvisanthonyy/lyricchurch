@@ -14,7 +14,7 @@ const page = async () => {
   const data = await req.json();
   console.log(data);
   return (
-    <div>
+    <div className="bg-white">
       <PartnerNav />
       <PartnerMain plans={data.partnershipPlans} />
     </div>
