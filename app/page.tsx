@@ -151,7 +151,7 @@ export default function Home() {
         ))}
       </div>
       <div className="relative border-lyric-lightgray text-lyric-gray  px-20 flex text-center justify-center items-center overflow-hidden w-[95%] h-30 rounded-2xl bg-white border mx-auto my-7">
-        For Information on merch, contact 09165534410
+        For Information on merch, contact 09164534410
       </div>
       <div className="relative flex justify-center items-center overflow-hidden w-[95%] min-h-60 max-h-85 rounded-2xl bg-white mx-auto my-4">
         <Image
