@@ -7,8 +7,13 @@ interface ChildProps {
 
 const PartnerNav = ({ albumName }: ChildProps) => {
   return (
-    <div className="flex-col absolute left-[50%] -translate-[50%] top-[50%] w-[90%] rounded-[40px] flex justify-center items-center px-3 border border-white bg-white/50 backdrop-blur-xl h-50">
-      <div className="flex pl-1 mb-5 rounded-full justify-center items-center w-20 h-20 bg-white">
+    <div className="flex-col md:rounded-4xl md:bg-gray-100 md:justify-between md:flex-row  md:h-16 md:items-center md:w-[70%] absolute left-[50%] -translate-[50%] top-[50%] w-full justify-center  flex items-center px-3  bg-white/50 backdrop-blur-sm h-full">
+      <div className="flex items-center px-4 rounded-2xl 0">
+        <div className="mr-5 md:static absolute left-10 top-10">
+          <BackButton />
+        </div>
+      </div>
+      <div className="flex pl-1 mb-5 md:h-10 md:mb-0 md:bg-white/0 rounded-full justify-center items-center w-20 h-20 bg-white">
         <Image
           src={"/lyriclogo.png"}
           alt="laptop image"
@@ -16,13 +21,6 @@ const PartnerNav = ({ albumName }: ChildProps) => {
           width={40}
           className="object-fill"
         />
-      </div>
-
-      <div className="flex items-center px-4 h-10  rounded-2xl 0">
-        <div className="mr-5">
-          <BackButton />
-        </div>
-        <div className="mr-3 text-lg font-semibold">Back</div>
       </div>
     </div>
   );

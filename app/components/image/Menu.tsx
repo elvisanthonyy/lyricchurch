@@ -10,15 +10,21 @@ const Menu = ({ isMenuOpen }: ChildProps) => {
         isMenuOpen
           ? "opacity-100 translate-y-20"
           : "-translate-y-1000 opacity-100"
-      } z-15 flex top-5 text-xl font-semibold text-gray-900 -translate-x-[50%] rounded-4xl h-110 w-[90%] left-[50%] bg-white`}
+      } z-15 flex top-5 text-xl md:translate-y-0 md:text-sm md:font-medium md:h-10 md:top-9 md:justify-end md:w-[70%] md:z-50 md:bg-white/0 md:shadow-none md:flex font-semibold text-gray-900 -translate-x-[50%] rounded-4xl h-110 w-[90%] left-[50%] bg-white`}
     >
       <Link href={"/"}>
-        <div>Home</div>
+        <div className="md:mr-10 hover:scale-105 cursor-pointer hover:text-green-600 transition-all ease-in duration-500">
+          Home
+        </div>
       </Link>
       <Link href={"/"}>
-        <div>Contact Us</div>
+        <div className="md:mr-10 hover:scale-105 cursor-pointer hover:text-green-600 transition-all ease-in duration-500">
+          Contact Us
+        </div>
       </Link>
-      <div>About</div>
+      <div className="md:mr-10 hover:scale-105 cursor-pointer hover:text-green-600 transition-all ease-in duration-500">
+        About
+      </div>
     </div>
   );
 };

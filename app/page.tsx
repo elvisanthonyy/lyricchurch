@@ -24,6 +24,7 @@ import {
   FaForward,
 } from "react-icons/fa";
 import ImagePrevComp from "./components/image/ImagePrevComp";
+import { GiDrumKit } from "react-icons/gi";
 
 export default function Home() {
   const slideRef = useRef<HTMLDivElement | null>(null);
@@ -83,26 +84,29 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="">
       <NavBar name="home" />
-      <div className="flex relative overflow-hidden text-white text-5xl justify-center items-center w-full h-140 bg-black">
-        <div className="absolute w-[88%] rounded-2xl h-40 bg-white/30 backdrop-blur-xs border"></div>
-        <div className="absolute text-3xl hub-text text-center left-[50%] top-[50%] -translate-[50%]">
+      <div className="flex md:mt-40 md:rounded-2xl top-0 md:mb-10 left-0 relative md:w-[70%] md:mx-auto md:h-100 overflow-hidden text-white text-5xl justify-center items-center w-full h-140 bg-black">
+        <div className="absolute md:h-full md:w-full md:border-none md:rounded-none w-[88%] rounded-2xl h-40 bg-white/30 md:blur-lg backdrop-blur-xs border"></div>
+        <div className="absolute md:text-white md:text-5xl flex justify-center items-center md:w-[70%] md:h-70 md:rounded-2xl md:bg-white/0 md text-3xl hub-text text-center left-[50%] top-[50%] -translate-[50%]">
           Lyric Church
         </div>
-        <Image
-          src={"/nav_body.jpg"}
-          alt="laptop image"
-          height={500}
-          width={350}
-          className="w-full object-fill"
-        />
+        <div className="md:rounded-2xl w-full md:overflow-hidden md:w-full">
+          <Image
+            src={"/nav_body.jpg"}
+            alt="laptop image"
+            height={1000}
+            width={1000}
+            className="w-full md:w-full object-fill"
+          />
+        </div>
+
         <Link
           className="flex cursor-pointer w-auto h-auto absolute bottom-15"
           href={"/auth/login"}
         ></Link>
       </div>
-      <div className="w-full  mx-auto overflow-hidden text-sm flex justify-start items-center text-white h-12 bg-black border-white border-b-2">
+      <div className="w-full md:w-[70%]  mx-auto overflow-hidden text-sm flex justify-start items-center text-white h-12 bg-black border-white border-b-2">
         <div className="shrink-0 text-white font-semibold flex w-auto slide-animation mr-5">
           <div className=" flex shrink-0 mx-5">
             January Series - Apostles, Prophets and Faith
@@ -131,7 +135,7 @@ export default function Home() {
           <div className="flex shrink-0 mx-5">2026 - Bold</div>
         </div>
       </div>
-      <div className="relative text-2xl flex justify-center items-center overflow-hidden w-[95%] h-60 rounded-2xl bg-white/20 border mx-auto my-7">
+      <div className="relative md:w-[70%] text-2xl flex justify-center items-center overflow-hidden w-[95%] h-60 rounded-2xl bg-white/20 border mx-auto my-7">
         <Image
           src={"/confeti.svg"}
           height={200}
@@ -139,21 +143,21 @@ export default function Home() {
           alt="confeti image"
           className="z-10 w-[120%] opacity-90 scale-270 absolute top-50 left-0"
         />
-        <div className="z-5 absolute px-4 rounded-2xl h-15 flex justify-center items-center  font-bold text-3xl ">
+        <div className="z-5 md:w-[70%] absolute px-4 rounded-2xl h-15 flex justify-center items-center  font-bold text-3xl ">
           Welcome to 2026
         </div>
       </div>
-      <div>
+      <div className="flex md:grid md:gap-x-5 md:gap-y-5 md:w-[70%] md:mx-auto xl:grid-cols-3 md:grid-cols-2 flex-col  w-full">
         {images.map((image) => (
-          <div key={image._id.toString()}>
+          <div className="md:w-full mx-auto w-[95%]" key={image._id.toString()}>
             <ImageComp image={image} />
           </div>
         ))}
       </div>
-      <div className="relative border-lyric-lightgray text-lyric-gray  px-20 flex text-center justify-center items-center overflow-hidden w-[95%] h-30 rounded-2xl bg-white border mx-auto my-7">
+      <div className="relative md:w-[70%] md:mt-10 border-lyric-lightgray text-lyric-gray  px-20 flex text-center justify-center items-center overflow-hidden w-[95%] h-30 rounded-2xl bg-white border mx-auto my-7">
         For Information on merch, contact 09164534410
       </div>
-      <div className="relative flex justify-center items-center overflow-hidden w-[95%] min-h-60 max-h-85 rounded-2xl bg-white mx-auto my-4">
+      <div className="relative md:w-[70%] flex justify-center items-center overflow-hidden w-[95%] min-h-60 max-h-85 rounded-2xl bg-white mx-auto my-4">
         <Image
           src={"/hillsong.jpg"}
           height={300}
@@ -165,7 +169,7 @@ export default function Home() {
           <FaBackward /> <FaPause className="text-2xl" /> <FaForward />
         </div>
       </div>
-      <div className="relative border-lyric-gray text-lyric-gray  px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
+      <div className="relative md:w-[70%] border-lyric-gray text-lyric-gray  px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
         <div className="flex flex-col mb-8 justify-center items-center font-bold my-5">
           <FaMapMarkerAlt className=" mb-5 text-lg" />
           <div className="text-sm">
@@ -179,7 +183,7 @@ export default function Home() {
         <div className="w-full g-red-400 shrink-0  flex justify-center flex-col">
           {services.map((service) => (
             <div
-              className="flex justify-center h-auto rounded-4xl px-5 py-5 w-full mb-5 bg-gray-100"
+              className="flex md:w-[50%] md:mx-auto justify-center h-auto rounded-4xl px-5 py-5 w-full mb-5 bg-gray-100"
               key={service._id.toString()}
             >
               <div className="flex text-sm">{`${service.name} ${service.description}`}</div>
@@ -187,47 +191,59 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex border-lyric-gray text-lyric-gray  flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
-        <div className="flex items-center mb-5 font-semibold text-lg">
-          <FaBook className="mr-5 text-lg" />
-          Sermon Library
-        </div>
+      <div className="flex md:w-[70%] md:mx-auto flex-col md:grid md:grid-cols-2">
+        <div className="flex border-lyric-gray text-lyric-gray  flex-col justify-center items-center mx-auto mb-5 w-[95%] md:w-full  rounded-2xl border text-center  bg-white py-10">
+          <div className="flex items-center mb-5 font-semibold text-lg">
+            <FaBook className="mr-5 text-lg" />
+            Sermon Library
+          </div>
 
-        <div className="w-[80%] mb-8">
-          Get updated on every of our sermons via Telegram Channel
+          <div className="w-[80%] mb-8">
+            Get updated on every of our sermons via Telegram Channel
+          </div>
+          <Link
+            className="flex md:w-60 w-[90%]"
+            href={"https://t.me/SermonsLyricLibary"}
+            target="_blank"
+          >
+            <button className="flex cursor-pointer w-full justify-center items-center  h-15 bg-black text-white rounded-2xl">
+              <FaTelegram className="mr-3 text-2xl" /> Telegram
+            </button>
+          </Link>
         </div>
-        <button className="flex cursor-pointer justify-center items-center w-[90%] h-15 bg-black text-white rounded-2xl">
-          <FaTelegram className="mr-3 text-2xl" /> Telegram
-        </button>
-      </div>
-      <div className="flex border-lyric-gray text-lyric-gray flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
-        <div className="w-[80%] font-semibold my-8">
-          Follow us on YouTube and stay updated
+        <div className="flex border-lyric-gray text-lyric-gray flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
+          <div className="w-[80%] font-semibold my-8">
+            Follow us on YouTube and stay updated
+          </div>
+          <button className="flex cursor-pointer md:w-60 justify-center items-center w-[90%] h-15 bg-red-600 text-white rounded-2xl">
+            <FaYoutube className="mr-3 text-2xl " /> Youtube
+          </button>
         </div>
-        <button className="flex cursor-pointer justify-center items-center w-[90%] h-15 bg-red-600 text-white rounded-2xl">
-          <FaYoutube className="mr-3 text-2xl" /> Youtube
-        </button>
       </div>
-      <div className="flex text-lyric-gray border-lyric-lightgray justify-center items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
+      <div className="flex md:w-[70%] text-lyric-gray border-lyric-lightgray justify-center items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
         <div className="flex items-center">
           <FaCalendar className="mr-5 text-lg" />
           Event Calender
         </div>
       </div>
-      <div className="relative flex justify-center items-center overflow-hidden w-[95%] rounded-2xl bg-white mx-auto my-4">
-        <Image
-          src={"/blessings.jpg"}
-          height={500}
-          width={500}
-          alt="song of the month image"
-          className="w-full"
-        />
+      <div className="relative md:w-[70%] md:h-140 flex md:justify-normal justify-center items-center overflow-hidden w-[95%] rounded-2xl bg-white mx-auto my-4">
+        <div className="w-full md:h-full  md:items-start md:w-[50%] overflow-hidden">
+          <Image
+            src={"/blessings.jpg"}
+            height={500}
+            width={500}
+            alt="song of the month image"
+            className="w-full md:h-full object-cover"
+          />
+        </div>
+
         <div
-          className={`py-5 pb-8 flex-col absolute border transition-all duration-300 ease-in ${
+          className={`py-5 z-50 md:h-full md:bg-amber-50 md:justify-center md:static pb-8 md:w-[50%] flex-col absolute border transition-all duration-300 ease-in ${
             isBlessingOpoen ? "h-80" : "h-30"
           }  border-white flex justify-center items-center bottom-5 w-[90%] rounded-2xl bg-white/10 backdrop-blur-lg`}
         >
           <div
+            className="md:hidden"
             onClick={() =>
               isBlessingOpoen
                 ? setIsBlessingOpen(false)
@@ -237,69 +253,78 @@ export default function Home() {
             <FaAngleUp
               className={`${
                 isBlessingOpoen ? "rotate-180" : "rotate-0"
-              } text-white mb-4 text-2xl duration-400 transition-all ease-in`}
+              } text-white mb-4 md:text-black text-2xl duration-400 transition-all ease-in`}
             />
           </div>
-          <div className="text-white font-bold text-xl">Meet the Blessing</div>
+          <div className="mb-10 hidden md:flex">
+            <GiDrumKit className="text-7xl" />
+          </div>
+          <div className="text-white font-bold text-xl md:text-black">
+            Meet the Blessing
+          </div>
           <div
             className={` ${
               isBlessingOpoen ? "opacity-100 flex" : "opacity-0 hidden"
-            } text-white transition-all ease-in-out text-md mt-5 mb-3 w-[90%] text-center`}
+            } text-white md:flex md:opacity-100 md:text-black transition-all ease-in-out text-md mt-5 mb-3 w-[90%] text-center`}
           >
             This is the worship ministry of The Lyric church Creating the pace
             for you to experience God via Contemporary music and the Gospel
           </div>
         </div>
       </div>
-      <div className="flex overflow-hidden bg-blue-50 flex-col justify-center min-h-90 items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg  py-5">
-        <div className="relative box-border  -top-10 w-full flex justify-center items-center h-60 overflow-hidden">
+      <div className="flex overflow-hidden md:w-[70%] bg-blue-50 flex-col justify-center min-h-90 items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg  py-5">
+        <div className="relative box-border md:w-[50%] -top-10 w-full flex justify-center items-center h-60 overflow-hidden">
           <Image
             src="/partner.svg"
             height={500}
             width={500}
             alt="partner image"
-            className="w-full "
+            className="w-full select-none pointer-events-none"
           />
         </div>
-        <Link className="w-[90%]" href={"/us/partner"}>
+        <Link className="w-[90%] md:w-[20%]" href={"/us/partner"}>
           <div className="flex shrink-0 mb-5 cursor-pointer justify-center items-center w-full h-14 bg-lyric-gray rounded-2xl text-white">
             Partner with us
           </div>
         </Link>
       </div>
 
-      <div className="flex text-lyric-gray justify-center border-lyric-lightgray items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
+      <div className="flex md:w-[70%] text-lyric-gray justify-center border-lyric-lightgray items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
         <FaUser className="mr-5 text-lg" />
-        Meet Our Leader
+        Meet Our Leaders
       </div>
       <div>
         {leaders.map((leader) => (
           <div
             key={leader._id.toString()}
-            className="w-[95%] mb-5 rounded-2xl overflow-hidden h-fit bg-white mx-auto"
+            className="w-[95%] md:flex md:h-100 md:flex-row md:w-[70%] mb-5 rounded-2xl overflow-hidden h-fit bg-white mx-auto"
           >
-            <div className="p-5">
-              <div className="font-bold text-lg mb-2">{leader.name}</div>
-              <div className="mb-5 text-lyric-gray">{leader.description}</div>
+            <div className="p-8 md:w-[50%] lg:w-[70%] md:flex md:flex-col md: justify-center">
+              <div className="font-bold md:mb-10 md:text-xl lg:text-2xl text-lg mb-2">
+                {leader.name}
+              </div>
+              <div className="mb-5 md:text-md xl:text-lg text-lyric-gray">
+                {leader.description}
+              </div>
             </div>
 
-            <div className="bg-black w-full h-fit">
+            <div className="bg-black md:w-[50%] w-full h-fit">
               <Image
                 src={leader.imageURL}
-                height={300}
-                width={300}
+                height={500}
+                width={500}
                 alt={leader.name}
-                className="w-full"
+                className="w-full select-none pointer-events-none"
               />
             </div>
           </div>
         ))}
       </div>
-      <div className="flex flex-col justify-center items-center mx-auto mb-5 w-[95%]  text-center  bg-white py-10">
+      <div className="flex flex-col  md:w-[70%] justify-center items-center mx-auto mb-5 w-[95%]  text-center  bg-white py-10">
         <div className="flex cursor-pointer justify-center items-center w-[90%] h-15 text-lyric-gray rounded-2xl">
           <FaImage className="mr-3 text-2xl" /> Photo Gallery
         </div>
-        <div className="grid grid-cols-2 w-[90%] font-semibold my-8">
+        <div className="grid md:grid-cols-4 grid-cols-2 w-[90%] font-semibold my-8">
           <ImagePrevComp imageURL="/blessings.jpg" />
           <ImagePrevComp imageURL="/Jerryy.jpg" />
           <ImagePrevComp imageURL="/nav_body.jpg" />
@@ -307,14 +332,14 @@ export default function Home() {
         </div>
 
         <Link className="w-[90%]" href={"/lyric/gallery"}>
-          <button className="flex cursor-pointer justify-center w-full items-center  h-15 bg-lyric-gray text-white rounded-2xl">
+          <button className="flex md:w-80 md:mx-auto cursor-pointer justify-center w-full items-center  h-15 bg-lyric-gray text-white rounded-2xl">
             See Gallery
           </button>
         </Link>
       </div>
       <button
         onClick={scrollToTop}
-        className="z-20 fixed bottom-10 right-10 h-15 w-15 border shadow-2xl border-black flex justify-center items-center bg-white/0 backdrop-blur-2xl rounded-full"
+        className="z-20 fixed md:right-[16%] bottom-10 right-10 h-15 w-15 border shadow-2xl border-black flex justify-center items-center bg-white/0 backdrop-blur-2xl rounded-full"
       >
         <FaAngleUp />
       </button>

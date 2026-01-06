@@ -13,9 +13,9 @@ const NavBar = ({ name }: ChildProps) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="flex z-20 h-auto w-full absolute top-0 ">
+    <nav className="flex z-20 h-auto w-full absolute top-0">
       <Menu isMenuOpen={isMenuOpen} />
-      <div className="mt-5 mx-auto rounded-[46px] z-30 flex  items-center justify-between left px-8 w-[90%] h-18 bg-white">
+      <div className="mt-5 md:border mx-auto rounded-[46px] z-30 flex  items-center justify-between md:w-[70%] left px-8 w-[90%] h-18 bg-white">
         {name === "home" && (
           <div className="flex items-center">
             <div className="flex mr-3 justify-start items-center">
@@ -31,10 +31,10 @@ const NavBar = ({ name }: ChildProps) => {
           onClick={() =>
             isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
           }
-          className="flex z-30  cursor-pointer flex-col justify-center items-center w-10 h-auto "
+          className="flex z-30 md:hidden cursor-pointer flex-col justify-center items-center w-10 h-auto "
         >
           <span
-            className={`transition-all duration-400 ease-in w-5 m-1 ${
+            className={`transition-all  duration-400 ease-in w-5 m-1 ${
               isMenuOpen ? "-rotate-45 translate-y-1" : ""
             } rounded-2xl h-0.5 bg-lyric-gray block`}
           ></span>
