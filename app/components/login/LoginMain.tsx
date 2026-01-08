@@ -37,20 +37,15 @@ const LoginMain = () => {
       setLoading(false);
       setMessage("log in successfull");
       setTimeout(() => {
-        redirect(redirectURL ? `/${redirectURL}` : "/dashboard");
+        redirect(redirectURL ? `/${redirectURL}` : "/admin");
       }, 1000);
     }
   };
   return (
     <div className="relative w-full flex-col h-dvh items-center bg-white flex justify-center py-20">
       <div className="absolute top-0 left-0 flex w-full justify-between border-b h-15  items-center p-5 bg-white">
-        <div className="text-xl mt-2 font-bold ">Elite Hub</div>
-        <Image
-          src={"/elite_logo.svg"}
-          width={50}
-          height={50}
-          alt="elite logo"
-        />
+        <div className="text-xl mt-2 font-bold ">Lyric Church</div>
+        <Image src={"/lyriclogo.png"} width={30} height={30} alt="lyric logo" />
       </div>
       <form
         className="flex flex-col items-center w-full mt-10 bg-white min-h-60 rounded-lg p-5"
@@ -80,11 +75,6 @@ const LoginMain = () => {
           {loading ? <ButtonLoading /> : "Login"}
         </button>
       </form>
-      <Link className="w-[90%]" href="/auth/signup">
-        <div className="my-3 cursor-pointer text-sm w-full border h-13 flex justify-center items-center rounded-xl">
-          Sign Up
-        </div>
-      </Link>
     </div>
   );
 };

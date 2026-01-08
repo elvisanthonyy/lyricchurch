@@ -91,13 +91,13 @@ export default function Home() {
         <div className="absolute md:text-white md:text-5xl flex justify-center items-center md:w-[70%] md:h-70 md:rounded-2xl md:bg-white/0 md text-3xl hub-text text-center left-[50%] top-[50%] -translate-[50%]">
           Lyric Church
         </div>
-        <div className="md:rounded-2xl w-full md:overflow-hidden md:w-full">
+        <div className="md:rounded-2xl h-full w-full md:overflow-hidden md:w-full">
           <Image
             src={"/nav_body.jpg"}
             alt="laptop image"
             height={1000}
             width={1000}
-            className="w-full md:w-full object-fill"
+            className="w-full h-full md:w-full object-fill"
           />
         </div>
 
