@@ -12,7 +12,7 @@ import FrontImageComp from "./FrontImageComp";
 import LeaderAdminComp from "./LeaderAdminComp";
 
 interface ChildProps {
-  categoryParam: string;
+  categoryParam: string | string[] | undefined;
   data: any;
 }
 
