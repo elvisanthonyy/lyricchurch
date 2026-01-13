@@ -22,8 +22,8 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
 
   useEffect(() => {}, []);
   return (
-    <div className="w-full mt-5">
-      <div className="flex hidden-scroll overflow-scroll w-[86%] h-10 mt-10 border-b-lyric-lightgray mx-auto border-b">
+    <div className="w-full">
+      <div className="flex hidden-scroll overflow-scroll w-[86%] h-10 mt-7 border-b-lyric-lightgray mx-auto border-b">
         {categories.map((category, index) => (
           <div key={index} className="flex shrink-0">
             <CategoriesComp

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AdminNav = () => {
   return (
-    <div className="w-[90%] justify-between px-10 flex items-center text-white h-18 mt-6 bg-lyric-gray mx-auto rounded-[40px]">
+    <div className="w-full justify-between px-10 flex items-center text-white h-18 bg-lyric-gray">
       <Link href={"/admin"}>
         <FaUserShield className="text-xl" />
       </Link>
