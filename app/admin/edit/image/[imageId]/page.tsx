@@ -15,6 +15,10 @@ const page = async ({ params }: { params: Promise<{ imageId: string }> }) => {
     redirect("/auth/login");
   }
 
+  if (session.user.role !== "admin") {
+    redirect("/auth/login");
+  }
+
   const res = await fetch(`${baseURL}/api/get/one/image/${paramBody.imageId}`, {
     method: "GET",
     headers: {

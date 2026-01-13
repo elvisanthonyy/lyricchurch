@@ -9,6 +9,7 @@ import { IGalleryAlbum } from "@/models/galleryAlbum";
 import { IService } from "@/models/service";
 import FrontImageComp from "./FrontImageComp";
 import LeaderAdminComp from "./LeaderAdminComp";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 interface ChildProps {
   categoryParam: string | string[] | undefined;
@@ -37,7 +38,7 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
           </div>
         ))}
       </div>
-      <div className="mt-5 flex w-full  py-5 min-h-[70dvh]">
+      <div className="mt-2 flex w-full  py-5 min-h-[70dvh]">
         {!categoryParam && (
           <div className="flex mx-auto flex-col  w-[90%]">
             {data?.map((frontImage: IImage) => (
@@ -62,16 +63,31 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
           </div>
         )}
         {categoryParam === "Gallery Images" && (
-          <div>
+          <div className="w-[90%] mx-auto">
             {data?.map((galleryAlbum: IGalleryAlbum) => (
-              <div key={galleryAlbum._id.toString()}>{galleryAlbum.name}</div>
+              <div
+                className="w-full flex my-2 rounded-xl items-center justify-center h-20 bg-gray-200"
+                key={galleryAlbum._id.toString()}
+              >
+                {galleryAlbum.name}
+              </div>
             ))}
           </div>
         )}
         {categoryParam === "Services" && (
-          <div>
+          <div className="w-[90%] mx-auto">
             {data?.map((service: IService) => (
-              <div key={service._id.toString()}>{service.name}</div>
+              <div
+                className="h-12 w-full justify-between bg-gray-200 my-2 flex items-center px-5 rounded-xl"
+                key={service._id.toString()}
+              >
+                <div> {service.name}</div>
+
+                <div className="flex ">
+                  <FaTrash className="mr-5" />
+                  <FaEdit />
+                </div>
+              </div>
             ))}
           </div>
         )}

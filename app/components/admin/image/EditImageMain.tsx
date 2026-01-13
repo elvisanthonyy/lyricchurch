@@ -3,6 +3,7 @@ import api from "@/libs/api";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IImage } from "@/models/image";
+import { FaCamera } from "react-icons/fa";
 
 interface FormFields {
   name: string;
@@ -49,17 +50,39 @@ const EditImageMain = ({ image }: ChildProps) => {
   };
 
   return (
-    <div>
+    <div className="mt-5 w-[90%] mx-auto">
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-        {preview && <img src={preview} />}
+        <div className="relative border border-lyric-lightgray w-full aspect-4/3 rounded-2xl bg-gray-200 mb-3 overflow-hidden">
+          {preview && (
+            <img className="w-full h-full object-cover" src={preview} />
+          )}
+          <label
+            className="absolute top-[50%] left-[50%] -translate-[50%]"
+            htmlFor="file"
+          >
+            <div className="w-16 h-16 rounded-full bg-white flex justify-center items-center">
+              <FaCamera className="text-xl" />
+            </div>
+          </label>
+          <input
+            id="file"
+            onChange={setImage}
+            type="file"
+            className="border hidden h-12 rounded-lg flex justify-center items-center"
+          />
+        </div>
+
         <input
           {...register("name", {
             required: "Name is required",
           })}
-          className="border"
+          className="border border-lyric-gray h-12 mb-2 rounded-lg px-4"
+          placeholder="name"
         />
-        <input onChange={setImage} type="file" className="border" />
-        <button>Edit</button>
+
+        <button className="bg-lyric-gray w-full h-13 flex justify-center items-center text-white mt-4 rounded-lg">
+          Edit Image
+        </button>
       </form>
     </div>
   );
