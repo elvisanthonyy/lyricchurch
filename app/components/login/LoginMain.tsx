@@ -72,7 +72,7 @@ const LoginMain = () => {
           className="cursor-pointer flex justify-center items-center p-2 shrink-0 text-sm w-full focus:outline-none h-13 my-2 rounded-xl bg-black text-white"
           type="submit"
         >
-          {loading ? <ButtonLoading /> : "Login"}
+          {loading ? <ButtonLoading mode="dark" /> : "Login"}
         </button>
       </form>
     </div>

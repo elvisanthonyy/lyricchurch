@@ -1,7 +1,6 @@
 "use client";
 import CategoriesComp from "./CategoriesComp";
-import { useSearchParams } from "next/navigation";
-import api from "@/libs/api";
+import Link from "next/link";
 import { useEffect } from "react";
 import { IImage } from "@/models/image";
 import { ILeader } from "@/models/leader";
@@ -46,9 +45,11 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
                 <FrontImageComp frontImage={frontImage} />
               </div>
             ))}
-            <div className="flex justify-center items-center cursor-pointer w-full h-10 border rounded-lg text-xl">
-              +
-            </div>
+            <Link className="w-full" href={"/admin/add/image"}>
+              <div className="flex justify-center items-center cursor-pointer w-full h-10 border rounded-lg text-xl">
+                +
+              </div>
+            </Link>
           </div>
         )}
         {categoryParam === "Leaders" && (

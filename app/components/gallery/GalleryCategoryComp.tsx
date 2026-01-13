@@ -20,7 +20,7 @@ const GalleryCategoryComp = ({ name, thumbnailURL }: ChildProps) => {
           />
         </div>
 
-        <div className="flex backdrop-blur-sm back justify-center border-2 border-white rounded-xl items-center h-10 bg-white/0">
+        <div className="flex text-lyric-gray font-semibold backdrop-blur-sm back justify-center border-2 border-white rounded-xl items-center h-10 bg-white/0">
           {name}
         </div>
       </div>

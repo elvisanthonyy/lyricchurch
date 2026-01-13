@@ -75,6 +75,7 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.role = user.role;
       }
       return token;
     },
@@ -83,6 +84,7 @@ export const authOptions: NextAuthOptions = {
         const user = await User.findOne({ email: session.user.email });
         if (user) {
           session.user.id = token.id;
+          session.user.role = token.role;
         }
       }
       return session;

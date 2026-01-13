@@ -157,18 +157,7 @@ export default function Home() {
       <div className="relative md:w-[70%] md:mt-10 border-lyric-lightgray text-lyric-gray  px-20 flex text-center justify-center items-center overflow-hidden w-[95%] h-30 rounded-2xl bg-white border mx-auto my-7">
         For Information on merch, contact 09164534410
       </div>
-      <div className="relative md:w-[70%] flex justify-center items-center overflow-hidden w-[95%] min-h-60 max-h-85 rounded-2xl bg-white mx-auto my-4">
-        <Image
-          src={"/hillsong.jpg"}
-          height={300}
-          width={300}
-          alt="song of the month image"
-          className="w-full"
-        />
-        <div className="absolute border border-white flex justify-between px-10 text-white items-center bottom-10 w-[80%] h-15 rounded-2xl bg-white/10 backdrop-blur-lg">
-          <FaBackward /> <FaPause className="text-2xl" /> <FaForward />
-        </div>
-      </div>
+
       <div className="relative md:w-[70%] border-lyric-gray text-lyric-gray  px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
         <div className="flex flex-col mb-8 justify-center items-center font-bold my-5">
           <FaMapMarkerAlt className=" mb-5 text-lg" />
