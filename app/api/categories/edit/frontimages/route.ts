@@ -1,16 +1,79 @@
+export const runtime = "nodejs";
 import { NextResponse } from "next/server";
 import dbConnect from "@/libs/dbConnect";
 import { Image } from "@/models/image";
+import cloudinary from "@/libs/cloudinary";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-const handler = async () => {
+const handler = async (req: Request) => {
   await dbConnect();
+  const session = await getServerSession(authOptions);
+
+  const formData = await req.formData();
+  const file = formData.get("image") as File;
+  const name = formData.get("name") as string;
+  const imageId = formData.get("imageId") as string;
+
+  if (!session) {
+    return NextResponse.json({
+      status: "error",
+      message: "session not found",
+    });
+  }
+
+  if (session.user.role !== "admin") {
+    return NextResponse.json({
+      status: "error",
+      message: "your are not an admin",
+    });
+  }
+
+  //get image to run check
+  const image = await Image.findById(imageId);
+
+  if (!image) {
+    return NextResponse.json({
+      status: "error",
+      message: "image not found",
+    });
+  }
+
+  if (!file || !(file instanceof File)) {
+    image.name = name;
+    await image.save();
+    return NextResponse.json({
+      status: "okay",
+      message: "image updated without picture",
+    });
+  }
+
   try {
-    const frontImages = await Image.find();
-    return NextResponse.json({ message: "gotten", data: frontImages });
-  } catch (error) {
-    console.error("Error", error);
-    return NextResponse.json({ message: "somethint went wrong" });
+    const buffer = Buffer.from(await file.arrayBuffer());
+
+    const base64 = `data:${file.type};base64,${buffer.toString("base64")}`;
+    const result = await cloudinary.uploader.upload(base64, {
+      folder: "uploads",
+      upload_preset: process.env.CLOUD_PRESET,
+      position: "center",
+    });
+
+    image.name = name;
+    image.imageURL = result.secure_url;
+
+    await image.save();
+    return NextResponse.json({
+      status: "okay",
+      message: "Image updated successfully",
+    });
+  } catch (error: any) {
+    console.error("error", error);
+
+    return NextResponse.json({
+      error: error.message,
+      message: "something went wrong",
+    });
   }
 };
 
-export { handler as GET };
+export { handler as POST };

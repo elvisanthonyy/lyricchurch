@@ -37,7 +37,6 @@ const handler = async (req: Request) => {
   try {
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    console.log("Buff len ", buffer.length);
     const base64 = `data:${file.type};base64,${buffer.toString("base64")}`;
     const result = await cloudinary.uploader.upload(base64, {
       folder: "uploads",
@@ -45,14 +44,19 @@ const handler = async (req: Request) => {
       position: "center",
     });
     console.log(process.env.CLOUD_PRESET);
+
+    const highestPosition = await Image.findOne().sort({ position: -1 });
+
     const image = new Image({
       name,
+      position: highestPosition && highestPosition?.position + 1,
       imageURL: result.secure_url,
     });
+
     await image.save();
     return NextResponse.json({
       status: "okay",
-      message: "image created successfully",
+      message: "Image created successfully",
     });
   } catch (error: any) {
     console.error("error", error);
