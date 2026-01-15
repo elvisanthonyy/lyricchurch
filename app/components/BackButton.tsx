@@ -2,11 +2,18 @@
 import { useRouter } from "next/navigation";
 import { MdChevronLeft } from "react-icons/md";
 
-const BackButton = () => {
+interface ChildProps {
+  mode?: string;
+}
+
+const BackButton = ({ mode }: ChildProps) => {
   const router = useRouter();
 
   return (
-    <div className="cursor-pointer" onClick={() => router.back()}>
+    <div
+      className={`cursor-pointer ${mode === "dark" && "text-white"}`}
+      onClick={() => router.back()}
+    >
       <MdChevronLeft className="text-3xl" />
     </div>
   );

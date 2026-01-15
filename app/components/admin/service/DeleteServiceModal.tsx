@@ -4,19 +4,19 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import api from "@/libs/api";
 import ButtonLoading from "../../Loading/ButtonLoading";
 import { MdDone, MdClose } from "react-icons/md";
-import { IImage } from "@/models/image";
+import { IService } from "@/models/service";
 
 interface ChildProps {
-  image: IImage;
+  service: IService;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const DeleteImageModal = ({ setIsModalOpen, image }: ChildProps) => {
+const DeleteServiceModal = ({ setIsModalOpen, service }: ChildProps) => {
   const [loading, setLoading] = useState(false);
 
-  const deletImage = () => {
+  const deletService = () => {
     api
-      .get(`/api/categories/delete/frontimages/${image._id}`)
+      .post(`/api/categories/delete/service`, { serviceId: service._id })
       .then((res) => {})
       .catch((err) => {
         console.error("Error", err);
@@ -26,7 +26,7 @@ const DeleteImageModal = ({ setIsModalOpen, image }: ChildProps) => {
   return (
     <div
       onClick={() => setIsModalOpen(false)}
-      className="z-8 flex items-center justify-center backdrop-blur-xs bg-black/90 w-full h-dvh fixed bottom-0 left-0"
+      className="z-8 flex items-center justify-center backdrop-blur-xs bg-black/90 w-full h-dvh fixed  top-0 left-0"
     >
       <div
         onClick={(e) => e.stopPropagation()}
@@ -41,7 +41,7 @@ const DeleteImageModal = ({ setIsModalOpen, image }: ChildProps) => {
         </div>
         <div className="flex mt-5">
           <div
-            onClick={deletImage}
+            onClick={deletService}
             className="border w-18 rounded-lg h-8 mx-5 flex justify-center items-center"
           >
             Yes
@@ -58,4 +58,4 @@ const DeleteImageModal = ({ setIsModalOpen, image }: ChildProps) => {
   );
 };
 
-export default DeleteImageModal;
+export default DeleteServiceModal;

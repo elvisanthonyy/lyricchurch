@@ -53,7 +53,7 @@ const handler = async (req: Request) => {
 
     const base64 = `data:${file.type};base64,${buffer.toString("base64")}`;
     const result = await cloudinary.uploader.upload(base64, {
-      folder: "uploads",
+      folder: "uploads/images",
       upload_preset: process.env.CLOUD_PRESET,
       position: "center",
     });

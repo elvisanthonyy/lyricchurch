@@ -6,7 +6,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 const handler = async (req: Request) => {
   await dbConnect();
-  const { name, description } = await req.json();
+  const { serviceId } = await req.json();
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -23,27 +23,19 @@ const handler = async (req: Request) => {
     });
   }
   try {
-    const highestService = await Service.findOne().sort({ position: -1 });
-
-    if (!highestService) {
-      await Service.create({
-        name: name,
-        position: 0,
-        description: description,
-      });
+    const service = await Service.findById(serviceId);
+    if (!service) {
       return NextResponse.json({
-        status: "okay",
-        message: "Service has been created successfully",
+        status: "error",
+        message: "Service not found",
       });
     }
-    await Service.create({
-      name: name,
-      position: highestService && highestService.position + 1,
-      description: description,
-    });
+
+    await service.deleteOne();
+
     return NextResponse.json({
       status: "okay",
-      message: "Service has been created successfully",
+      message: "Service has been deleted successfully",
     });
   } catch (error) {
     console.error("Error", error);

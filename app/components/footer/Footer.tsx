@@ -32,14 +32,19 @@ const Footer = () => {
         </Link>
 
         <Link href={"/lyric/gallery"}>
-          <div className="transition-all ease-in hover:text-green-600 duration-400">
+          <div className="transition-all mb-2 ease-in hover:text-green-600 duration-400">
             Gallery
+          </div>
+        </Link>
+        <Link href={"admin"}>
+          <div className="transition-all ease-in hover:text-green-600 duration-400">
+            admin
           </div>
         </Link>
 
         <div></div>
       </div>
-      <div className="flex px-5 my-7 md:w-[50%] mx-auto text-3xl w-full justify-between">
+      <div className="flex px-5 my-7 md:w-[50%] mx-auto text-2xl w-full justify-between">
         <Link href={"https://www.facebook.com/Lyrichurch"} target="_blank">
           <FaFacebook />
         </Link>

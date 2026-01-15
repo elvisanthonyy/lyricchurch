@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 import { NextResponse } from "next/server";
 import dbConnect from "@/libs/dbConnect";
-import { Image } from "@/models/image";
+import { Leader } from "@/models/leader";
 import cloudinary from "@/libs/cloudinary";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -9,6 +9,12 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 const handler = async (req: Request) => {
   await dbConnect();
   const session = await getServerSession(authOptions);
+
+  const formData = await req.formData();
+  const file = formData.get("image") as File;
+  const name = formData.get("name") as string;
+  const description = formData.get("description") as string;
+  const leaderId = formData.get("leaderId") as string;
 
   if (!session) {
     return NextResponse.json({
@@ -23,14 +29,24 @@ const handler = async (req: Request) => {
       message: "your are not an admin",
     });
   }
-  const formData = await req.formData();
-  const file = formData.get("image") as File;
-  const name = formData.get("name");
 
-  if (!file || !(file instanceof File)) {
+  //get image to run check
+  const leader = await Leader.findById(leaderId);
+
+  if (!leader) {
     return NextResponse.json({
       status: "error",
-      message: "no file provided",
+      message: "Leader not found",
+    });
+  }
+
+  if (!file || !(file instanceof File)) {
+    leader.name = name;
+    leader.description = description;
+    await leader.save();
+    return NextResponse.json({
+      status: "okay",
+      message: "leader updated without picture",
     });
   }
 
@@ -39,24 +55,19 @@ const handler = async (req: Request) => {
 
     const base64 = `data:${file.type};base64,${buffer.toString("base64")}`;
     const result = await cloudinary.uploader.upload(base64, {
-      folder: "uploads/images",
+      folder: "uploads/leader",
       upload_preset: process.env.CLOUD_PRESET,
       position: "center",
     });
-    console.log(process.env.CLOUD_PRESET);
 
-    const highestPosition = await Image.findOne().sort({ position: -1 });
+    leader.name = name;
+    leader.description = description;
+    leader.imageURL = result.secure_url;
 
-    const image = new Image({
-      name,
-      position: highestPosition && highestPosition?.position + 1,
-      imageURL: result.secure_url,
-    });
-
-    await image.save();
+    await leader.save();
     return NextResponse.json({
       status: "okay",
-      message: "Image created successfully",
+      message: "Leader updated successfully",
     });
   } catch (error: any) {
     console.error("error", error);

@@ -10,6 +10,7 @@ import { IService } from "@/models/service";
 import FrontImageComp from "./FrontImageComp";
 import LeaderAdminComp from "./LeaderAdminComp";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import ServiceComp from "./ServiceComp";
 
 interface ChildProps {
   categoryParam: string | string[] | undefined;
@@ -17,7 +18,7 @@ interface ChildProps {
 }
 
 const AdminMain = ({ categoryParam, data }: ChildProps) => {
-  console.log(data);
+  //create ctegories to map
   const categories = ["Front Images", "Leaders", "Gallery Images", "Services"];
 
   useEffect(() => {}, []);
@@ -47,7 +48,7 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
               </div>
             ))}
             <Link className="w-full" href={"/admin/add/image"}>
-              <div className="flex justify-center items-center cursor-pointer w-full h-10 border rounded-lg text-xl">
+              <div className="flex justify-center items-center cursor-pointer w-full h-10 bg-black text-white border rounded-xl text-xl">
                 +
               </div>
             </Link>
@@ -60,6 +61,11 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
                 <LeaderAdminComp leader={leader} />
               </div>
             ))}
+            <Link href={"/admin/add/leader"}>
+              <div className="w-[90%] cursor-pointer h-13 mx-auto rounded-xl border-lyric-lightgray border flex justify-center items-center">
+                +
+              </div>
+            </Link>
           </div>
         )}
         {categoryParam === "Gallery Images" && (
@@ -77,18 +83,15 @@ const AdminMain = ({ categoryParam, data }: ChildProps) => {
         {categoryParam === "Services" && (
           <div className="w-[90%] mx-auto">
             {data?.map((service: IService) => (
-              <div
-                className="h-12 w-full justify-between bg-gray-200 my-2 flex items-center px-5 rounded-xl"
-                key={service._id.toString()}
-              >
-                <div> {service.name}</div>
-
-                <div className="flex ">
-                  <FaTrash className="mr-5" />
-                  <FaEdit />
-                </div>
+              <div className="w-full" key={service._id.toString()}>
+                <ServiceComp service={service} />
               </div>
             ))}
+            <Link className="w-full" href={"/admin/add/service"}>
+              <div className="w-full flex cursor-pointer justify-center items-center h-12 my-5 border rounded-xl border-lyric-lightgray">
+                +
+              </div>
+            </Link>
           </div>
         )}
       </div>
