@@ -7,7 +7,7 @@ interface ChildProps {
 
 const GalleryNav = ({ albumName }: ChildProps) => {
   return (
-    <div className="flex bg-lyric-gray border-b-2 border-b-lyric-lightgray justify-between items-center px-3 w-full  h-18">
+    <div className="flex md:h-21 md:px-[10%] bg-lyric-gray border-b-2 border-b-lyric-lightgray justify-between items-center px-3 w-full  h-18">
       <BackButton mode="dark" />
       {albumName && (
         <div className="text-lyric-gray  font-semibold">{albumName}</div>

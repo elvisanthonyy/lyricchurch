@@ -25,7 +25,7 @@ const page = async ({
   const data = await res.json();
   console.log(data);
   return (
-    <div>
+    <div className="">
       <GalleryNav albumName={decodeURI(paramsBody.albumname)} />
       <AlbumMain albumImages={data.albumImages} />
     </div>

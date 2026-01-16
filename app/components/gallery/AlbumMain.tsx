@@ -12,31 +12,38 @@ const AlbumMain = ({ albumImages }: ChildProps) => {
   const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
   const [previewUrl, setPreviewUrl] = useState("");
   return (
-    <div className="py-5 grid grid-cols-2 place-content-start w-full px-5 bg-white h-dvh">
+    <div className="pt-5 w-full px-5 bg-white h-dvh">
       <PreviewModal
         isPreviewModalOpen={isPreviewModalOpen}
         previewURL={previewUrl}
         setIsPreviewModalOpen={setIsPreviewModalOpen}
       />
 
-      {albumImages?.map((image: IGalleryImage) => (
-        <div
-          onClick={() => {
-            setPreviewUrl(image.imageURL);
-            setIsPreviewModalOpen(true);
-          }}
-          className={`cursor-pointer bg-red-500 relative flex flex-col overflow-hidden shrink-0 mt-5  w-[95%] aspect-square mx-auto mr-2 rounded-2xl  bg-linear-to-br `}
-          key={image._id.toString()}
-        >
-          <Image
-            src={image.imageURL}
-            height={300}
-            width={300}
-            alt={image.name}
-            className="h-full object-cover"
-          />
-        </div>
-      ))}
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-y-2 gap-x-2 md:gap-y-5 md:grid-cols-3  md:gap-x-5 w-[98%] place-items-center place-content-start md:w-[80%] mx-auto">
+        {albumImages?.length === 0 && (
+          <div className="absolute top-[50%] left-[50%] -translate-[50%]">
+            No Images in this album
+          </div>
+        )}
+        {albumImages?.map((image: IGalleryImage) => (
+          <div
+            onClick={() => {
+              setPreviewUrl(image.imageURL);
+              setIsPreviewModalOpen(true);
+            }}
+            className={`cursor-pointer md:w-full relative flex flex-col overflow-hidden shrink-0 md:mt-0  w-full aspect-square rounded-2xl  bg-linear-to-br `}
+            key={image._id.toString()}
+          >
+            <Image
+              src={image.imageURL}
+              height={400}
+              width={400}
+              alt={image.name}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -44,6 +44,9 @@ const Footer = () => {
 
         <div></div>
       </div>
+      <div className="text-lyric-lightgray">
+        jeremiahemmanuelofficial@gmail.com
+      </div>
       <div className="flex px-5 my-7 md:w-[50%] mx-auto text-2xl w-full justify-between">
         <Link href={"https://www.facebook.com/Lyrichurch"} target="_blank">
           <FaFacebook />
@@ -64,6 +67,7 @@ const Footer = () => {
           <FaTelegram />
         </Link>
       </div>
+
       <div className="my-5 font-extralight text-lyric-lightgray text-sm">
         &copy; 2026 Lyric Church. All Rights Reserved
       </div>

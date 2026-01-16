@@ -16,7 +16,7 @@ const page = async () => {
   console.log(data);
 
   return (
-    <div>
+    <div className="bg-white">
       <GalleryNav />
       <GalleryMain albums={data.galleryAlbums} />
     </div>

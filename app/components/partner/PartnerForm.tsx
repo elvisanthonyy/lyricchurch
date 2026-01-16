@@ -50,11 +50,11 @@ const PartnerForm = ({ setIsFormOpen, plan }: ChildProps) => {
   return (
     <div
       onClick={() => setIsFormOpen(false)}
-      className="z-8 flex items-end backdrop-blur-xs bg-black/90 w-full h-dvh fixed bottom-0 laft-o"
+      className="z-8 flex md:items-center md:justify-center items-end backdrop-blur-xs bg-black/90 w-full h-dvh fixed bottom-0 laft-o"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="z-8 relative flex py-10 text-white flex-col items-center rounded-tl-2xl rounded-tr-2xl bg-lyric-gray w-full min-h-[70dvh]"
+        className="z-8 relative md:px-7 md:w-120 md:rounded-2xl  flex py-10 text-white flex-col items-center rounded-tl-2xl rounded-tr-2xl bg-lyric-gray w-full min-h-[70dvh]"
       >
         <div
           onClick={() => setIsFormOpen(false)}
@@ -106,12 +106,12 @@ const PartnerForm = ({ setIsFormOpen, plan }: ChildProps) => {
               className="w-[90%] mb-5 rounded-lg px-5 border-lyric-lightgray mx-auto h-13 border "
               placeholder="Phone number"
             />
-            <button className="w-[90%] mt-5 mx-auto cursor-pointer h-16 bg-white text-black rounded-xl">
+            <button className="w-[90%] mt-5 mx-auto cursor-pointer h-14 bg-white text-black rounded-xl">
               {loading ? <ButtonLoading /> : "Subscribe"}
             </button>
           </form>
         ) : (
-          <div className="w-full flex-col flex justify-center items-center h-[80%]">
+          <div className="w-full absolute -translate-y-[50%] top-[55%] flex-col flex justify-center items-center h-[80%]">
             <div className="w-[30%] mb-8 aspect-square flex rounded-full justify-center items-center bg-green-500">
               <MdDone className="text-7xl" />
             </div>

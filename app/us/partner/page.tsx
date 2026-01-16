@@ -13,7 +13,7 @@ const page = async () => {
   const data = await req.json();
   console.log(data);
   return (
-    <div className="flex flex-col bg-white h-auto">
+    <div className="flex flex-col bg-white">
       <PartnerMain plans={data.partnershipPlans} />
     </div>
   );

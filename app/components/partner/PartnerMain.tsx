@@ -20,18 +20,18 @@ const PartnerMain = ({ plans }: ChildProps) => {
     null
   );
   return (
-    <div className="w-full pb-10 min-h-[90dvh]">
+    <div className="w-full md:min-h-dvh min-h-[90dvh]">
       {isFormOpen && (
         <PartnerForm plan={selectedPlan} setIsFormOpen={setIsFormOpen} />
       )}
-      <div className="relative md:h-40  w-full mb-5 overflow-hidden">
+      <div className="relative h-30 md:bg-white/0 bg-lyric-gray md:h-20 md:mb-8 md:mt-6 w-full mb-5 overflow-hidden">
         <PartnerNav />
         <Image
           src={"/partnership.jpg"}
           alt="laptop image"
           height={500}
           width={350}
-          className="w-full md:hidden object-fill"
+          className="w-full hidden object-fill"
         />
       </div>
       <div className="w-[90%] md:w-[70%] flex flex-col items-center justify-center text-center border p-5 border-lyric-lightgray  mb-3 mx-auto ">
@@ -43,7 +43,7 @@ const PartnerMain = ({ plans }: ChildProps) => {
         <div className="font-semibold">Jeremiah Emmanuel</div>
         <div className="text-sm mb-5">First Bank</div>
       </div>
-      <div className="flex mx-auto md:mt-5 md:w-[70%] place-items-center md:gap-x-5 lg:grid lg:grid-cols-2 flex-col w-full">
+      <div className="flex mx-auto md:mt-5 md:w-[70%] place-items-center md:gap-x-5 lg:grid lg:grid-cols-2 xl:grid-cols-3 flex-col w-full">
         {plans?.map((plan) => (
           <div
             onClick={() => {

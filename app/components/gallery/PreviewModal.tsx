@@ -15,7 +15,7 @@ const PreviewModal = ({
 }: ChildProps) => {
   return (
     <div
-      className={`fixed transition-all duration-500 ease-in z-120 flex justify-center items-center top-0 left-0 z-100 ${
+      className={`fixed transition-all  duration-500 ease-in z-120 flex justify-center items-center top-0 left-0 z-100 ${
         isPreviewModalOpen
           ? "translate-x-0 opacity-100"
           : "opacity-0 -translate-x-1000"
@@ -27,7 +27,7 @@ const PreviewModal = ({
       >
         <FaTimes />
       </div>
-      <div className="flex w-full  bg-white">
+      <div className="flex w-full md:rounded-xl overflow-hidden md:w-[50%] bg-white">
         {previewURL && (
           <Image
             src={previewURL}
