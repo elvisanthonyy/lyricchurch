@@ -32,7 +32,7 @@ const Footer = () => {
         </Link>
 
         <Link href={"/lyric/gallery"}>
-          <div className="transition-all mb-2 ease-in hover:text-green-600 duration-400">
+          <div className="transition-all md:mr-10 md:mb-0 mb-3 ease-in hover:text-green-600 duration-400">
             Gallery
           </div>
         </Link>
