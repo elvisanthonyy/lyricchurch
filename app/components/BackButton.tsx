@@ -4,15 +4,18 @@ import { MdChevronLeft } from "react-icons/md";
 
 interface ChildProps {
   mode?: string;
+  name?: string;
 }
 
-const BackButton = ({ mode }: ChildProps) => {
+const BackButton = ({ mode, name }: ChildProps) => {
   const router = useRouter();
 
   return (
     <div
       className={`cursor-pointer ${
-        mode === "dark" && "text-white md:text-lyric-gray"
+        mode === "dark" && name !== "gallery"
+          ? "text-white md:text-lyric-gray"
+          : "md:text-white"
       }`}
       onClick={() => router.back()}
     >
