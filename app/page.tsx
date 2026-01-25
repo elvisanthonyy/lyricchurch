@@ -32,6 +32,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [index, setIndex] = useState(0);
   const [isBlessingOpoen, setIsBlessingOpen] = useState(false);
+  const [isToTopBtn, setIsToTopBtn] = useState(false);
   const [images, setImage] = useState<IImage[] | []>([]);
   const [leaders, setLeaders] = useState<ILeader[] | []>([]);
   const [services, setServices] = useState<IService[] | []>([]);
@@ -83,11 +84,25 @@ export default function Home() {
     return () => window.removeEventListener("scroll", checkInView);
   }, []);
 
+  const checkScroll = () => {
+    if (window.scrollY > 5) {
+      setIsToTopBtn(true);
+    } else {
+      setIsToTopBtn(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScroll);
+
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, [checkScroll]);
+
   return (
     <div className="">
       <NavBar name="home" />
-      <div className="flex md:mt-40 md:rounded-2xl top-0 md:mb-10 left-0 relative md:w-[70%] md:mx-auto md:h-100 overflow-hidden text-white text-5xl justify-center items-center w-full h-140 bg-black">
-        <div className="absolute md:h-full md:w-full md:border-none md:rounded-none w-[88%] rounded-2xl h-40 bg-white/30 md:blur-lg backdrop-blur-xs border"></div>
+      <div className="flex md:mt-38 md:rounded-2xl top-0 md:mb-10 left-0 relative md:w-[70%] md:mx-auto md:h-100 overflow-hidden text-white text-5xl justify-center items-center w-full h-140 bg-black">
+        <div className="absolute md:border md:h-full md:w-full md:border-none md:rounded-none w-[88%] rounded-2xl h-40 bg-white/15 md:blur-lg backdrop-blur-xs border"></div>
         <div className="absolute md:text-white md:text-5xl flex justify-center items-center md:w-[70%] md:h-70 md:rounded-2xl md:bg-white/0 md text-3xl hub-text text-center left-[50%] top-[50%] -translate-[50%]">
           Lyric Church
         </div>
@@ -97,7 +112,7 @@ export default function Home() {
             alt="laptop image"
             height={1000}
             width={1000}
-            className="w-full h-full md:w-full object-fill"
+            className="w-full h-full md:w-full object-fill md:object-cover"
           />
         </div>
 
@@ -106,7 +121,7 @@ export default function Home() {
           href={"/auth/login"}
         ></Link>
       </div>
-      <div className="w-full md:w-[70%]  mx-auto overflow-hidden text-sm flex justify-start items-center text-white h-12 bg-black border-white border-b-2">
+      <div className="w-full md:rounded-xl md:w-[70%]  mx-auto overflow-hidden text-sm flex md:text-xs justify-start items-center text-white h-12 bg-lyric-gray border-white border-b-2">
         <div className="shrink-0 text-white font-semibold flex w-auto slide-animation mr-5">
           <div className=" flex shrink-0 mx-5">
             January Series - Apostles, Prophets and Faith
@@ -135,7 +150,7 @@ export default function Home() {
           <div className="flex shrink-0 mx-5">2026 - Bold</div>
         </div>
       </div>
-      <div className="relative md:w-[70%] text-2xl flex justify-center items-center overflow-hidden w-[95%] h-60 rounded-2xl bg-white/20 border mx-auto my-7">
+      <div className="relative md:w-[70%] text-2xl flex justify-center items-center overflow-hidden w-[95%] h-60 rounded-2xl bg-white/20 border border-lyric-lightgray mx-auto my-7">
         <Image
           src={"/confeti.svg"}
           height={200}
@@ -158,7 +173,7 @@ export default function Home() {
         For Information on merch, contact 09164534410
       </div>
 
-      <div className="relative md:w-[70%] border-lyric-gray text-lyric-gray  px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
+      <div className="relative md:w-[70%] border-lyric-lightgray text-lyric-gray md:px-0 px-5 py-5 flex flex-col text-center justify-center  overflow-hidden w-[95%] min-h-30 h-auto rounded-2xl bg-white border mx-auto my-7">
         <div className="flex flex-col mb-8 justify-center items-center font-bold my-5">
           <FaMapMarkerAlt className=" mb-5 text-lg" />
           <div className="text-sm">
@@ -180,7 +195,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex md:w-[70%] md:mx-auto flex-col md:grid md:grid-cols-2">
+      <div className="flex md:w-[70%] md:gap-x-5 md:mx-auto flex-col md:grid md:grid-cols-2">
         <div className="flex border-lyric-gray text-lyric-gray  flex-col justify-center items-center mx-auto mb-5 w-[95%] md:w-full  rounded-2xl border text-center  bg-white py-10">
           <div className="flex items-center mb-5 font-semibold text-lg">
             <FaBook className="mr-5 text-lg" />
@@ -200,7 +215,7 @@ export default function Home() {
             </button>
           </Link>
         </div>
-        <div className="flex border-lyric-gray text-lyric-gray flex-col justify-center items-center mx-auto mb-5 w-[95%]  rounded-2xl border text-center  bg-white py-10">
+        <div className="flex border-lyric-gray text-lyric-gray flex-col justify-center items-center mx-auto mb-5 w-[95%] md:w-full  rounded-2xl border text-center  bg-white py-10">
           <div className="w-[80%] font-semibold my-8">
             Follow us on YouTube and stay updated
           </div>
@@ -328,7 +343,9 @@ export default function Home() {
       </div>
       <button
         onClick={scrollToTop}
-        className="z-20 fixed md:right-[16%] bottom-10 right-10 h-15 w-15 border shadow-2xl border-black flex justify-center items-center bg-white/0 backdrop-blur-2xl rounded-full"
+        className={`z-50 ${
+          isToTopBtn ? "flex" : "hidden"
+        } fixed md:right-[16%] pointer-cursor bottom-10 right-10 h-15 w-15 border border-black justify-center items-center bg-white/0 backdrop-blur-2xl rounded-full`}
       >
         <FaAngleUp />
       </button>

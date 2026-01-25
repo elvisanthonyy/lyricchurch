@@ -70,8 +70,12 @@ body {
 }
 
 .slide-animation {
-  animation: 20s linear ease-in;
+  animation: 20s linear ease-in infinite;
   animation-name: slide;
+}
+
+.slide-animation:hover {
+  animation-play-state: paused;
 }
 
 .loading-animation {
