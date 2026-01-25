@@ -206,12 +206,13 @@ export default function Home() {
             Get updated on every of our sermons via Telegram Channel
           </div>
           <Link
-            className="flex md:w-60 w-[90%]"
+            className="flex md:w-[70%] lg:w-60 w-[90%]"
             href={"https://t.me/SermonsLyricLibary"}
             target="_blank"
           >
             <button className="flex cursor-pointer w-full justify-center items-center  h-15 bg-black text-white rounded-2xl">
-              <FaTelegram className="mr-3 text-2xl" /> Telegram
+              <FaTelegram className="mr-3 text-2xl  md:text-xl lg:text-2xl" />{" "}
+              Telegram
             </button>
           </Link>
         </div>
@@ -219,8 +220,9 @@ export default function Home() {
           <div className="w-[80%] font-semibold my-8">
             Follow us on YouTube and stay updated
           </div>
-          <button className="flex cursor-pointer md:w-60 justify-center items-center w-[90%] h-15 bg-red-600 text-white rounded-2xl">
-            <FaYoutube className="mr-3 text-2xl " /> Youtube
+          <button className="flex cursor-pointer md:w-[75%] lg:w-60 justify-center items-center w-[90%] h-15 bg-red-600 text-white rounded-2xl">
+            <FaYoutube className="mr-3 text-2xl md:text-xl lg:text-2xl" />{" "}
+            Youtube
           </button>
         </div>
       </div>
@@ -345,7 +347,7 @@ export default function Home() {
         onClick={scrollToTop}
         className={`z-50 ${
           isToTopBtn ? "flex" : "hidden"
-        } fixed md:right-[16%] pointer-cursor bottom-10 right-10 h-15 w-15 border border-black justify-center items-center bg-white/0 backdrop-blur-2xl rounded-full`}
+        } fixed md:right-[16%] cursor-pointer bottom-10 right-10 h-15 w-15 border text-white justify-center items-center bg-lyric-gray backdrop-blur-2xl rounded-full`}
       >
         <FaAngleUp />
       </button>
