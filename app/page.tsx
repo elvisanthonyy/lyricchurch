@@ -162,7 +162,7 @@ export default function Home() {
           Welcome to 2026
         </div>
       </div>
-      <div className="flex md:grid md:gap-x-5 md:gap-y-5 md:w-[70%] md:mx-auto xl:grid-cols-3 md:grid-cols-2 flex-col  w-full">
+      <div className="flex md:grid md:gap-x-5 md:gap-y-5 md:w-[70%] md:justify-items-center md:mx-auto xl:grid-cols-3 md:grid-cols-2 flex-col  w-full">
         {images.map((image) => (
           <div className="md:w-full mx-auto w-[95%]" key={image._id.toString()}>
             <ImageComp image={image} />
@@ -216,14 +216,23 @@ export default function Home() {
             </button>
           </Link>
         </div>
+
         <div className="flex border-lyric-gray text-lyric-gray flex-col justify-center items-center mx-auto mb-5 w-[95%] md:w-full  rounded-2xl border text-center  bg-white py-10">
-          <div className="w-[80%] font-semibold my-8">
+          <div className="w-[90%] font-semibold my-8">
             Follow us on YouTube and stay updated
           </div>
-          <button className="flex cursor-pointer md:w-[75%] lg:w-60 justify-center items-center w-[90%] h-15 bg-red-600 text-white rounded-2xl">
-            <FaYoutube className="mr-3 text-2xl md:text-xl lg:text-2xl" />{" "}
-            Youtube
-          </button>
+          <Link
+            className="flex md:w-[70%] lg:w-60 w-[90%]"
+            href={
+              "https://youtube.com/@jeremiahemmanuel-u8b?si=G6W1L9Kl51W52plS"
+            }
+            target="_blank"
+          >
+            <button className="flex cursor-pointer justify-center items-center w-full h-15 bg-red-600 text-white rounded-2xl">
+              <FaYoutube className="mr-3 text-2xl md:text-xl lg:text-2xl" />{" "}
+              Youtube
+            </button>
+          </Link>
         </div>
       </div>
       <div className="flex md:w-[70%] text-lyric-gray border-lyric-lightgray justify-center items-center mx-auto mb-5 w-[95%] font-semibold rounded-2xl border text-center text-lg bg-white py-5">
